@@ -19,6 +19,7 @@
 .DS_Store
 *.pem
 .firebase/
+.firebaserc
 
 # debug
 npm-debug.log*
@@ -33,3 +34,5 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+*.log
