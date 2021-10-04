@@ -1,13 +1,19 @@
 import SchoolCard from "../SchoolCard";
+import { SchoolList as Schools } from '../../../repositories/schoolList';
 
 type Props = {
-  names: string[]
+  schools: Schools
 };
 
-const SchoolList = ({names}: Props) => {
+const SchoolList = ({schools}: Props) => {
+  const keys = Object.keys(schools);
+
   return (
     <div>
-      {names.map(name => <SchoolCard name={name}/>)}
+      {keys.map(key => {
+        const school = schools[key];
+        return <SchoolCard key={key} school={school} />;
+      })}
     </div>
   );
 }

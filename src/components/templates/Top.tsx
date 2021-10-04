@@ -1,20 +1,16 @@
 import Search from "../organisms/Search";
 import SchoolList from "../organisms/SchoolList";
+import { SchoolList as Schools } from "../../repositories/schoolList";
 
-const data = [
-  "name1",
-  "name2",
-  "name3",
-  "name4",
-  "name5",
-  "name6",
-];
+type Props = {
+  schools: Schools
+};
 
-const Top = () => {
+const Top = ({schools}: Props) => {
   return (
     <>
       <Search />
-      <SchoolList names={data}/>
+      <SchoolList schools={schools}/>
     </>
   );
 }
