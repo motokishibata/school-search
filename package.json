@@ -18,7 +18,10 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@types/node": "^16.10.2",
+    "@types/react": "^17.0.27",
     "firebase-functions-test": "^0.2.3",
-    "firebase-tools": "^9.3.0"
+    "firebase-tools": "^9.3.0",
+    "typescript": "^4.4.3"
   }
 }
