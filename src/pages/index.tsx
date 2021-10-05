@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import Top from "../components/templates/Top";
-import { Condition, getSchoolList } from "../repositories/schoolList";
+import { toCondition, getSchoolList } from "../repositories/schoolList";
 
 const Home = () => {
-  const condition = useRouter().query as Condition;
+  const condition = toCondition(useRouter().query);
   const schools = getSchoolList(condition);
   return (
     <>

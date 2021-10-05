@@ -1,3 +1,4 @@
+import { ParsedUrlQuery } from 'querystring';
 import thumbnail from '../../public/150x150.png';
 
 export type School = {
@@ -41,21 +42,37 @@ const schools: SchoolList = {
   },
 }
 
-export type Condition = {
-  language?: string
+type Condition = {
+  skills?: string[]
+}
+
+export function toCondition(query: ParsedUrlQuery): Condition {
+  const keys = Object.keys(query);
+  return query as Condition;
+}
+
+function isEmpty(condition: Condition): boolean {
+  return Object.keys(condition).length === 0;
 }
 
 export function getSchoolList(condition: Condition): SchoolList {
-  if (Object.keys(condition).length === 0) {
+  if (isEmpty(condition)) {
     return schools;
   }
-
+  
   const result: SchoolList = {};
+  const checkSkills = (key: string, school: School) => {
+    for (const skill of condition.skills) {
+      if (school.skills.includes(skill)) {
+        result[key] = school;
+        return;
+      }
+    }
+  }
+
   for (const key of Object.keys(schools)) {
     const school = schools[key];
-    if (condition.language) {
-      
-    }
+    condition.skills && checkSkills(key, school);
   }
   return result;
 }
