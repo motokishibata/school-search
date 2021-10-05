@@ -1,11 +1,30 @@
+import { useRouter } from 'next/router';
 import styles from './Search.module.css';
 
 const Search = () => {
+  const router = useRouter();
+
+  const clickSearchButton = () => {
+    router.push({
+      pathname: "/",
+      query: {
+        language: "Python"
+      }
+    });
+  }
+
   return (
     <div className={styles.root}>
       <p>検索</p>
       <div className={styles.flexContainer}>
-        <p className={styles.flexItem}>言語</p>
+        <div className={styles.flexItem}>
+          <label htmlFor="">言語</label>
+          <select>
+            <option value="HTML/CSS">HTML/CSS</option>
+            <option value="Ruby">Ruby</option>
+            <option value="Ruby on Rails">Ruby on Rails</option>
+          </select>
+        </div>
         <p className={styles.flexItem}>価格</p>
         <p className={styles.flexItem}>期間</p>
         <p className={styles.flexItem}>スキル</p>
@@ -34,7 +53,7 @@ const Search = () => {
           <label htmlFor="campaign">キャンペーンあり</label>
         </div>
       </div>
-      <button>検索</button>
+      <button onClick={clickSearchButton}>検索</button>
     </div>
   );
 }

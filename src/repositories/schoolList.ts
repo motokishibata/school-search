@@ -1,3 +1,4 @@
+import { ParsedUrlQuery } from 'querystring';
 import thumbnail from '../../public/150x150.png';
 
 export type School = {
@@ -41,6 +42,21 @@ const schools: SchoolList = {
   },
 }
 
-export function getSchoolList(): SchoolList {
-  return schools;
+export type Condition = {
+  language?: string
+}
+
+export function getSchoolList(condition: Condition): SchoolList {
+  if (Object.keys(condition).length === 0) {
+    return schools;
+  }
+
+  const result: SchoolList = {};
+  for (const key of Object.keys(schools)) {
+    const school = schools[key];
+    if (condition.language) {
+      
+    }
+  }
+  return result;
 }

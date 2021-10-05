@@ -1,10 +1,14 @@
+import { useRouter } from 'next/router';
 import Top from "../components/templates/Top";
-import { getSchoolList } from "../repositories/schoolList";
+import { Condition, getSchoolList } from "../repositories/schoolList";
 
 const Home = () => {
-  const schools = getSchoolList();
+  const condition = useRouter().query as Condition;
+  const schools = getSchoolList(condition);
   return (
-    <Top schools={schools}/>
+    <>
+      <Top schools={schools}/>
+    </>
   );
 }
 
