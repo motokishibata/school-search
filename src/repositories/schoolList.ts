@@ -1,4 +1,3 @@
-import { ParsedUrlQuery } from 'querystring';
 import thumbnail from '../../public/150x150.png';
 
 export type School = {

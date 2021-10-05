@@ -1,61 +1,136 @@
-import { useRouter } from 'next/router';
+import { optionsToTrigger } from 'firebase-functions/v1';
+import LabelCheckbox from '../../molecules/LabelCheckbox';
 import styles from './Search.module.css';
 
 const Search = () => {
-  const router = useRouter();
-
-  const clickSearchButton = () => {
-    router.push({
-      pathname: "/",
-      query: {
-        language: "Python"
-      }
-    });
-  }
+  const conditions = [];
+  conditions.push(createSkillsElement());
+  conditions.push(createPriceElement());
+  conditions.push(createPeriodElement());
+  conditions.push(createAreaElement());
+  conditions.push(createTargetElement());
+  conditions.push(createFeatureisElement());
 
   return (
     <div className={styles.root}>
-      <p>検索</p>
-      <div className={styles.flexContainer}>
-        <div className={styles.flexItem}>
-          <label htmlFor="">言語</label>
-          <select>
-            <option value="HTML/CSS">HTML/CSS</option>
-            <option value="Ruby">Ruby</option>
-            <option value="Ruby on Rails">Ruby on Rails</option>
-          </select>
+      <form action="/" method="GET">
+        <h2>プログラミングスクール検索</h2>
+        <div className={styles.flexContainer}>
+          {conditions.map(condition => {
+            return (
+              <div className={styles.flexItem}>
+                {condition}
+              </div>
+            );
+          })}
         </div>
-        <p className={styles.flexItem}>価格</p>
-        <p className={styles.flexItem}>期間</p>
-        <p className={styles.flexItem}>スキル</p>
-        <p className={styles.flexItem}>場所</p>
-        <p className={styles.flexItem}>対象</p>
-      </div>
-      <div className={styles.flexContainer}>
-        <div className={styles.flexCheckbox}>
-          <input type="checkbox" name="free" id="free" />
-          <label htmlFor="free">無料体験・説明会あり</label>
-        </div>
-        <div className={styles.flexCheckbox}>
-          <input type="checkbox" name="jobchange" id="jobchange" />
-          <label htmlFor="jobchange">就職・転職に強い</label>
-        </div>
-        <div className={styles.flexCheckbox}>
-          <input type="checkbox" name="mantoman" id="mantoman" />
-          <label htmlFor="mantoman">マンツーマンあり</label>
-        </div>
-        <div className={styles.flexCheckbox}>
-          <input type="checkbox" name="training" id="training" />
-          <label htmlFor="training">企業研修に使える</label>
-        </div>
-        <div className={styles.flexCheckbox}>
-          <input type="checkbox" name="campaign" id="campaign" />
-          <label htmlFor="campaign">キャンペーンあり</label>
-        </div>
-      </div>
-      <button onClick={clickSearchButton}>検索</button>
+        <button>検索</button>
+      </form>
     </div>
   );
 }
+
+function createSkillsElement() {
+  const skills = [
+    "HTML/CSS", "JavaScript", "Ruby", "Python", "PHP"
+  ];
+
+  const elements = skills.map(skill =>
+    <LabelCheckbox name={`skill_${skill}`} labelText={skill} />
+  );
+
+  return (
+    <>
+      <h3>学べる言語・スキル</h3>
+      {elements}
+    </>
+  );
+}
+
+function createPriceElement() {
+  return (
+    <>
+      <h3>価格(総額)</h3>
+      <select name="price">
+        <option value="">指定しない</option>
+        <option value="0">無料</option>
+        <option value="_50000">5万円以下</option>
+        <option value="50000_100000">5万円~10万円</option>
+        <option value="100000_200000">10万円~20万円</option>
+        <option value="200000_400000">20万円~40万円</option>
+        <option value="400000_700000">40万円~70万円</option>
+        <option value="700000_">70万円以上</option>
+      </select>
+    </>
+  )
+}
+
+function createPeriodElement() {
+  return (
+    <>
+      <h3>期間</h3>
+      <select name="period">
+        <option value="">指定しない</option>
+        <option value="short">~1週間</option>
+        <option value="middle">1ヶ月~3ヶ月</option>
+        <option value="long">4ヶ月~6ヶ月</option>
+        <option value="longlong">6ヶ月~12ヶ月</option>
+        <option value="verylong">1年~</option>
+      </select>
+    </>
+  );
+}
+
+function createAreaElement() {
+  const pref = [
+    "北海道","青森県","東京都","大阪府","京都府","沖縄県"
+  ];
+  return (
+    <>
+      <h3>地域</h3>
+      <select name="area" multiple>
+        <option value="">指定しない</option>
+        {pref.map(p => 
+          <option value={p}>{p}</option>
+        )}
+      </select>
+    </>
+  );
+}
+
+function createTargetElement() {
+  return (
+    <>
+      <h3>対象</h3>
+      <select name="target">
+        <option value="">指定しない</option>
+        <option value="socity">社会人</option>
+        <option value="student">学生</option>
+      </select>
+    </>
+  );
+}
+
+function createFeatureisElement() {
+  const featureis = [
+    ["free", "無料体験・説明会あり"],
+    ["jobchange", "就職・転職に強い"],
+    ["mantoman", "マンツーマンあり"],
+    ["training", "企業研修に使える"],
+    ["campaign", "キャンペーンあり"],
+  ];
+
+  const elements = featureis.map(feature =>
+    <LabelCheckbox name={feature[0]} labelText={feature[1]} />
+  );
+
+  return (
+    <>
+      <h3>特徴</h3>
+      {elements}
+    </>
+  );
+}
+
 
 export default Search;
