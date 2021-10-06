@@ -1,5 +1,5 @@
-import { optionsToTrigger } from 'firebase-functions/v1';
 import LabelCheckbox from '../../molecules/LabelCheckbox';
+import Button from '../../atoms/Button';
 import styles from './Search.module.css';
 
 const Search = () => {
@@ -7,14 +7,14 @@ const Search = () => {
   conditions.push(createSkillsElement());
   conditions.push(createPriceElement());
   conditions.push(createPeriodElement());
-  conditions.push(createAreaElement());
-  conditions.push(createTargetElement());
-  conditions.push(createFeatureisElement());
+  // conditions.push(createAreaElement());
+  // conditions.push(createTargetElement());
+  // conditions.push(createFeatureisElement());
 
   return (
     <div className={styles.root}>
+      <h2>プログラミングスクール検索</h2>
       <form action="/" method="GET">
-        <h2>プログラミングスクール検索</h2>
         <div className={styles.flexContainer}>
           {conditions.map(condition => {
             return (
@@ -24,7 +24,9 @@ const Search = () => {
             );
           })}
         </div>
-        <button>検索</button>
+        <div className={styles.buttonContainer}>
+          <Button text="検索" />
+        </div>
       </form>
     </div>
   );

@@ -1,8 +1,9 @@
 .root {
-  border: solid 2px #000000;
+  border: solid 1px #d6d6d6;
+  background-color: #ffffff;
   border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 0 4px 0 rgba(170, 170, 170, 0.7);
 }
 
 .flexContainer {
@@ -16,4 +17,9 @@
 
 .flexCheckbox {
   width: 30%
+}
+
+.buttonContainer {
+  padding: 10px;
+  text-align: center;
 }
