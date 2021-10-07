@@ -34,7 +34,7 @@ const schools: SchoolList = {
     name: "TechAcademy",
     summary: "オンライン完結のスクールとして実績が豊富。",
     thumbnail: thumbnail,
-    learnStyle: ["オンライン", "マンツーマン"],
+    learnStyle: ["オンライン"],
     skills: ["HTML/CSS", "Ruby", "Ruby on Rails"],
     url: {
       official: "https://google.com",
@@ -49,7 +49,7 @@ const schools: SchoolList = {
     name: "テックキャンプ",
     summary: "最短4週間で未経験からエンジニアを目指せる",
     thumbnail: thumbnail,
-    learnStyle: ["オンライン"],
+    learnStyle: ["オンライン", "通学"],
     skills: ["HTML/CSS", "Ruby", "Ruby on Rails"],
     url: {
       official: "https://google.com",

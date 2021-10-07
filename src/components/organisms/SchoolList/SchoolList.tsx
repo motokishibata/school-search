@@ -1,6 +1,8 @@
 import SchoolCard from "../SchoolCard";
 import { SchoolList as Schools } from '../../../repositories/schoolList';
 
+import styles from './SchoolList.module.css';
+
 type Props = {
   schools: Schools
 };
@@ -9,7 +11,7 @@ const SchoolList = ({schools}: Props) => {
   const keys = Object.keys(schools);
 
   return (
-    <div>
+    <div className={styles.root}>
       {keys.map(key => {
         const school = schools[key];
         return <SchoolCard key={key} school={school} />;

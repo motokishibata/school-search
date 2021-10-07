@@ -4,6 +4,7 @@
   border-radius: 5px;
   padding: 10px 20px;
   box-shadow: 0 0 4px 0 rgba(190, 190, 190, 0.7);
+  max-width: 800px;
 }
 
 .h2 {

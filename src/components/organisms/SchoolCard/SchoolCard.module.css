@@ -1,14 +1,49 @@
 .root {
-  border: solid 2px #000000;
+  border: solid 1px #d6d6d6;
+  background-color: #fdfcfc;
   border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
+  padding: 10px 20px 20px 20px;
+  box-shadow: 0 0 4px 0 rgba(190, 190, 190, 0.7);
+  max-width: 800px;
+}
+
+.schoolName {
+  border-bottom: solid 1px var(--main-color);
 }
 
 .flexContainer {
   display: flex;
 }
 
+.flexItem {
+  padding: 10px;
+}
+
 .thumbnail {
-  margin: 10px;
+  margin-right: 10px;
+}
+
+.learnStyle {
+  background-color: var(--main-color);
+  color: #f6f7f7;
+  text-align: center;
+  min-width: 80px;
+  padding: 5px 10px;
+  margin-top: 0;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+.skill {
+  margin-right: 10px;
+}
+
+.linkButton {
+  text-decoration: none;
+  background-color: var(--accent-color);
+  color: #f6f7f7;
+  padding: 10px 15px;
+  border-radius: 3px;
+  margin-right: 10px;
+  font-size: 1.3rem;
 }

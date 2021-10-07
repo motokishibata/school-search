@@ -2,11 +2,12 @@ import styles from './BorderLabel.module.css';
 
 type Props = {
 	text: string
+	addCss?: string
 };
 
-const BorderLabel = ({text}: Props) => {
+const BorderLabel = ({text, addCss}: Props) => {
 	return (
-		<div className={styles.root}>
+		<div className={`${styles.root} ${addCss}`}>
 			<label>{text}</label>
 		</div>
 	);

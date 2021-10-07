@@ -1,5 +1,7 @@
 .root {
-  border: solid 1px #8888FF;
-  border-radius: 5%;
-  color: #8888FF;
+  border: solid 1px var(--main-color);
+  border-radius: 2px;
+  color: var(--main-color);
+  padding: 5px;
+  display: inline-block;
 }

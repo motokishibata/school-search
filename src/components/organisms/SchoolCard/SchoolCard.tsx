@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { School } from '../../../repositories/schoolList';
 import BorderLabel from '../../atoms/BorderLabel';
+import Button from '../../atoms/Button';
 import styles from './SchoolCard.module.css';
 
 type Props = {
@@ -9,23 +10,53 @@ type Props = {
 
 const SchoolCard = ({school}: Props) => {
   const labels = school.skills.map(skill => {
-    return <BorderLabel text={skill} />;
+    return <BorderLabel text={skill} addCss={styles.skill} />;
   });
   return (
     <div className={styles.root}>
-      <h3>{school.name}</h3>
-      <hr />
+      <h3 className={styles.schoolName}>{school.name}</h3>
       <div className={styles.flexContainer}>
         <div className={styles.thumbnail}>
           <Image src={school.thumbnail}/>
         </div>
         <div>
+          <LearnStyle
+            isOnline={school.learnStyle.includes("オンライン")}
+            isOffline={school.learnStyle.includes("通学")}
+          />
           {labels}
           <p>{school.summary}</p>
-          <a href={school.url.detail} target="_blank"><button>詳細</button></a>
-          <a href={school.url.official} target="_blank"><button>公式</button></a>
+          <HorizontalButtons detail={school.url.detail} official={school.url.official} />
         </div>
       </div>
+    </div>
+  );
+}
+
+type LearnStyleProps = {
+  isOnline: boolean
+  isOffline: boolean
+}
+
+const LearnStyle = ({isOnline, isOffline}: LearnStyleProps) => {
+  return (
+    <div className={styles.flexContainer}>
+      {isOnline && <p className={styles.learnStyle}>オンライン</p>}
+      {isOffline && <p className={styles.learnStyle}>通学</p>}
+    </div>
+  );
+}
+
+type HorizontalButtonsProps = {
+  detail: string
+  official: string
+};
+
+const HorizontalButtons = (url : HorizontalButtonsProps) => {
+  return (
+    <div>
+        <a className={styles.linkButton} href={url.detail} target="_blank">詳細</a>
+        <a className={styles.linkButton} href={url.official} target="_blank">公式</a>
     </div>
   );
 }

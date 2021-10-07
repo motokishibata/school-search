@@ -14,7 +14,10 @@ const Top = ({schools}: Props) => {
       <section className={styles.search}>
         <Search />
       </section>
-      <SchoolList schools={schools}/>
+      <section className={styles.schoolList}>
+        <h2 className={styles.h2}>プログラミングスクール一覧</h2>
+        <SchoolList schools={schools}/>
+      </section>
     </>
   );
 }
