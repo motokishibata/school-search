@@ -6,6 +6,14 @@
   box-shadow: 0 0 4px 0 rgba(190, 190, 190, 0.7);
 }
 
+.h2 {
+  text-align: center;
+}
+
+.h3 {
+  border-bottom: solid 1px var(--main-color);
+}
+
 .flexContainer {
   display: flex;
   flex-wrap: wrap;
@@ -13,10 +21,6 @@
 
 .flexItem {
   width: 25%;
-}
-
-.flexCheckbox {
-  width: 30%
 }
 
 .buttonContainer {

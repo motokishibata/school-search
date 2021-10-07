@@ -9,8 +9,7 @@ const LabelCheckbox = ({name, labelText}: Props) => {
 	return (
 		<div className={styles.root}>
 			<input type="checkbox" name={name} id={name} />
-			<label htmlFor={name}></label>
-			<label htmlFor={name} className={styles.labelText}>{labelText}</label>
+			<label htmlFor={name}>{labelText}</label>
 		</div>
 	);
 }
