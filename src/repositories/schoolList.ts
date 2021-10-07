@@ -94,7 +94,6 @@ export function toCondition(query: ParsedUrlQuery): Condition {
   if (skills.length > 0) {
     condition['skills'] = skills;
   }
-  console.log(JSON.stringify(condition));
   return condition;
 }
 
@@ -103,7 +102,6 @@ function isEmpty(condition: Condition): boolean {
 }
 
 export function getSchoolList(condition: Condition): SchoolList {
-  console.log(JSON.stringify(condition));
   if (isEmpty(condition)) {
     return schools;
   }
