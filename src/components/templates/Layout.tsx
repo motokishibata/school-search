@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Header from '../organisms/Header';
 
-import icon from '../../../public/manta.png';
+import icon from '../../assets/manta.png';
 
 const title = "プログラミングスクール検索・一覧・比較";
 const Layout = ({children}) => {

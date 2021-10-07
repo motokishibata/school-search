@@ -1,5 +1,5 @@
 import { ParsedUrlQuery } from 'querystring';
-import thumbnail from '../../public/150x150.png';
+import thumbnail from '../assets/150x150.png';
 
 type Period = {
   value: number
