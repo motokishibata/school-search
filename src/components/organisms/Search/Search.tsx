@@ -2,6 +2,7 @@ import { ReactNode, useState } from 'react';
 import LabelCheckbox from '../../molecules/LabelCheckbox';
 import Button from '../../atoms/Button';
 import styles from './Search.module.css';
+import Checkbox from '../../atoms/Checkbox';
 
 type ConditionProps = {
   header: string
@@ -43,7 +44,10 @@ function createSkillsElement() {
   ];
   return skills.map(skill => (
     <div className={styles.flexItem}>
-      <LabelCheckbox name={`skill_${skill}`} labelText={skill} />
+      <Checkbox id={`skill_${skill}`}
+        name={`skill_${skill}`}
+        text={skill}
+      />
     </div>
   ));
 }
