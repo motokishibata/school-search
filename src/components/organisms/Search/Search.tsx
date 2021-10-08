@@ -3,6 +3,7 @@ import LabelCheckbox from '../../molecules/LabelCheckbox';
 import Button from '../../atoms/Button';
 import styles from './Search.module.css';
 import Checkbox from '../../atoms/Checkbox';
+import Dropdown from '../../atoms/Dropdown';
 
 type ConditionProps = {
   header: string
@@ -63,13 +64,7 @@ function createPriceElement() {
     ["400000_700000", "40万円~70万円"],
     ["700000_", "70万円以上"],
   ];
-  return (
-    <select name="price">
-      {options.map(option => (
-        <option value={option[0]}>{option[1]}</option>
-      ))}
-    </select>
-  );
+  return <Dropdown name="price" options={options} />;
 }
 
 function createPeriodElement() {
@@ -81,16 +76,7 @@ function createPeriodElement() {
     ["longlong", "6ヶ月~12ヶ月"],
     ["verylong", "1年~"],
   ];
-  return (
-    <select name="period">
-      <option value="">指定しない</option>
-      <option value="short">~1週間</option>
-      <option value="middle">1ヶ月~3ヶ月</option>
-      <option value="long">4ヶ月~6ヶ月</option>
-      <option value="longlong">6ヶ月~12ヶ月</option>
-      <option value="verylong">1年~</option>
-    </select>
-  );
+  return <Dropdown name="period" options={options} />;
 }
 
 export default Search;
