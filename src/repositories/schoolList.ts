@@ -35,7 +35,7 @@ const schools: SchoolList = {
     summary: "オンライン完結のスクールとして実績が豊富。",
     thumbnail: thumbnail,
     learnStyle: ["オンライン"],
-    skills: ["HTML/CSS", "Ruby", "Ruby on Rails"],
+    skills: ["HTML/CSS", "Ruby", "Ruby on Rails", "Python"],
     url: {
       official: "https://google.com",
       detail: "https://google.com",
@@ -80,13 +80,13 @@ export function toCondition(query: ParsedUrlQuery): Condition {
       const name = key.substring(6);
       skills.push(name);
     }
-    if (key === "price") {
+    if (key === "price" && query[key] !== "") {
       const [left, right] = query[key].toString().split("_");
       const lower = (left === "") ? null : parseInt(left);
       const upper = (right === "") ? null : parseInt(right);
       condition['price'] = [lower, upper];
     }
-    if (key === "period") {
+    if (key === "period" && query[key] !== "") {
       condition['period'] = query[key].toString();
     }
   }

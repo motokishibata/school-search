@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import LabelCheckbox from '../../molecules/LabelCheckbox';
 import Button from '../../atoms/Button';
 import styles from './Search.module.css';
