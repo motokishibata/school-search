@@ -1,9 +1,9 @@
-import { ReactNode, useState } from 'react';
-import LabelCheckbox from '../../molecules/LabelCheckbox';
+import { ReactNode } from 'react';
 import Button from '../../atoms/Button';
 import styles from './Search.module.css';
 import Checkbox from '../../atoms/Checkbox';
 import Dropdown from '../../atoms/Dropdown';
+import * as conditions from '../../../repositories/searchCondition';
 
 type ConditionProps = {
   header: string
@@ -22,15 +22,17 @@ const Condition = ({header, children}: ConditionProps) => {
 }
 
 const Search = () => {
+  const prices = <Dropdown name="price" options={conditions.prices} />; 
+  const periods = <Dropdown name="period" options={conditions.periods} />; 
   return (
     <div className={styles.root}>
       <div className={styles.h2}>
         <h2>プログラミングスクール検索</h2>
       </div>
       <form action="/" method="GET">
-        <Condition header="学べる言語・スキル" children={createSkillsElement()} />
-        <Condition header="価格" children={createPriceElement()} />
-        <Condition header="期間" children={createPeriodElement()} />
+        <Condition header="学べる言語・スキル" children={createSkillsElement(conditions.skills)} />
+        <Condition header="価格" children={prices} />
+        <Condition header="期間" children={periods} />
         <div className={styles.buttonContainer}>
           <Button text="検索" />
         </div>
@@ -39,10 +41,7 @@ const Search = () => {
   );
 }
 
-function createSkillsElement() {
-  const skills = [
-    "HTML/CSS", "JavaScript", "Ruby", "Python", "PHP"
-  ];
+function createSkillsElement(skills: string[]) {
   return skills.map(skill => (
     <div className={styles.flexItem}>
       <Checkbox id={`skill_${skill}`}
@@ -51,32 +50,6 @@ function createSkillsElement() {
       />
     </div>
   ));
-}
-
-function createPriceElement() {
-  const options = [
-    ["", "指定しない"],
-    ["0", "無料"],
-    ["_50000", "5万円以下"],
-    ["50000_100000", "5万円~10万円"],
-    ["100000_200000", "10万円~20万円"],
-    ["200000_400000", "20万円~40万円"],
-    ["400000_700000", "40万円~70万円"],
-    ["700000_", "70万円以上"],
-  ];
-  return <Dropdown name="price" options={options} />;
-}
-
-function createPeriodElement() {
-  const options = [
-    ["", "指定しない"],
-    ["short", "~1週間"],
-    ["middle", "1ヶ月~3ヶ月"],
-    ["long", "4ヶ月~6ヶ月"],
-    ["longlong", "6ヶ月~12ヶ月"],
-    ["verylong", "1年~"],
-  ];
-  return <Dropdown name="period" options={options} />;
 }
 
 export default Search;
