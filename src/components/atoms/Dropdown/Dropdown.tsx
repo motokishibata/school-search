@@ -8,9 +8,11 @@ type Props = {
 
 const Dropdown = ({id, name, options}: Props) => {
   return (
-    <select className={styles.root} name={name} id={id}>
-      {options.map(op => <option value={op[0]}>{op[1]}</option>)}
-    </select>
+    <div className={styles.root}>
+      <select className={styles.select} name={name} id={id}>
+        {options.map(op => <option value={op[0]}>{op[1]}</option>)}
+      </select>
+    </div>
   );
 }
 
