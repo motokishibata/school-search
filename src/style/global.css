@@ -1,5 +1,6 @@
 :root {
   --main-color: #4aac9f;
+  --diluted-main-color: #d1f9f4;
   --accent-color: #2b5eab;
   --side-padding: 20px;
   --text-color: #354341;
@@ -9,4 +10,5 @@ body {
   margin: 0;
   padding: 0;
   color: var(--text-color);
+  font-family: '游ゴシック', '游ゴシック体', 'ヒラギノ角ゴ ProN', 'Meiryo UI';
 }

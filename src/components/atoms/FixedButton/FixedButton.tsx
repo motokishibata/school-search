@@ -1,6 +1,10 @@
 import styles from './FixedButton.module.css';
 
-const FixedButton = () => {
+type Props = {
+  onClick?: Function
+}
+
+const FixedButton = ({onClick}: Props) => {
   return (
     <a className={styles.root} href="/compare" >比較</a>
   );

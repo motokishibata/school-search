@@ -1,0 +1,7 @@
+.tableWrapper {
+  padding: 30px var(--side-padding);
+}
+
+.tableWrapper > * {
+  margin: 0 auto;
+}

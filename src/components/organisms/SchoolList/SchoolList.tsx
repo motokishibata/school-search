@@ -14,7 +14,7 @@ const SchoolList = ({schools}: Props) => {
     <div className={styles.root}>
       {keys.map(key => {
         const school = schools[key];
-        return <SchoolCard key={key} school={school} />;
+        return <SchoolCard key={key} schoolKey={key} school={school} />;
       })}
     </div>
   );

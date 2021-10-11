@@ -1,20 +1,24 @@
 import Image from 'next/image';
 import { School } from '../../../repositories/schoolList';
 import BorderLabel from '../../atoms/BorderLabel';
-import Button from '../../atoms/Button';
+import Checkbox from '../../atoms/Checkbox';
 import styles from './SchoolCard.module.css';
 
 type Props = {
+  schoolKey: string,
   school: School
 };
 
-const SchoolCard = ({school}: Props) => {
+const SchoolCard = ({schoolKey, school}: Props) => {
   const labels = school.skills.map(skill => {
     return <BorderLabel text={skill} addCss={styles.skill} />;
   });
   return (
     <div className={styles.root}>
-      <h3 className={styles.schoolName}>{school.name}</h3>
+      <div className={styles.flexContainer}>
+        <Checkbox id={schoolKey} name={schoolKey} />
+        <h3 className={styles.schoolName}>{school.name}</h3>
+      </div>
       <div className={styles.flexContainer}>
         <div className={styles.thumbnail}>
           <Image src={school.thumbnail}/>
