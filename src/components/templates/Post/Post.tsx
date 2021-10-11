@@ -7,8 +7,8 @@ const Post = ({ postData }) => {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article>
-        <h1>{postData.title}</h1>
+      <article className={styles.root}>
+        <h1 className={styles.title}>{postData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </>
