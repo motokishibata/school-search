@@ -1,5 +1,6 @@
 import Search from "../../organisms/Search";
 import SchoolList from "../../organisms/SchoolList";
+import FixedButton from "../../atoms/FixedButton";
 import { SchoolList as Schools } from "../../../repositories/schoolList";
 
 import styles from './Top.module.css';
@@ -18,6 +19,7 @@ const Top = ({schools}: Props) => {
         <h2 className={styles.h2}>プログラミングスクール一覧</h2>
         <SchoolList schools={schools}/>
       </section>
+      <FixedButton />
     </>
   );
 }

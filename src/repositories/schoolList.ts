@@ -60,6 +60,21 @@ const schools: SchoolList = {
       { name: "BB", price: 600000, period: { value: 6, unit: 'm'} }
     ]
   },
+  samurai: {
+    name: "SAMURAIエンジニア塾",
+    summary: "オーダーメイドのカリキュラム",
+    thumbnail: thumbnail,
+    learnStyle: ["オンライン"],
+    skills: ["ALL"],
+    url: {
+      official: "https://google.com",
+      detail: "https://google.com",
+    },
+    courses: [
+      { name: "AA", price: 30000, period: { value: 2, unit: 'w'}},
+      { name: "BB", price: 800000, period: { value: 6, unit: 'm'} }
+    ]
+  },
 }
 
 type Condition = {
