@@ -1,12 +1,17 @@
+import { MouseEventHandler } from 'react';
 import styles from './FixedButton.module.css';
 
 type Props = {
-  onClick?: Function
+  handleClick?: MouseEventHandler<HTMLAnchorElement>
 }
 
-const FixedButton = ({onClick}: Props) => {
+const FixedButton = ({handleClick}: Props) => {
   return (
-    <a className={styles.root} href="/compare" >比較</a>
+    <a
+      className={styles.root}
+      href="/compare"
+      onClick={handleClick}
+    >比較</a>
   );
 }
 

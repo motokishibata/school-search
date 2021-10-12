@@ -22,8 +22,8 @@ const Condition = ({header, children}: ConditionProps) => {
 }
 
 const Search = ({conditions}: {conditions: Conditions}) => {
-  const prices = <Dropdown name="price" options={conditions.prices} />; 
-  const periods = <Dropdown name="period" options={conditions.periods} />; 
+  const prices = <Dropdown name="price" options={conditions.prices} empty={true}/>; 
+  const periods = <Dropdown name="period" options={conditions.periods} empty={true}/>; 
   return (
     <div className={styles.root}>
       <div className={styles.h2}>

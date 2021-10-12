@@ -1,9 +1,12 @@
+import { SchoolList } from '../../../repositories/schoolList';
 import CompareTable from '../../organisms/CompareTable';
-import { getSchoolList } from '../../../repositories/schoolList';
 import styles from './Compare.module.css';
 
-const Compare = () => {
-  const schools = getSchoolList({});
+type Props = {
+  schools: SchoolList
+}
+
+const Compare = ({schools}: Props) => {
   return (
     <>
       <section className={styles.tableWrapper}>

@@ -1,3 +1,4 @@
+import { ChangeEventHandler } from 'react';
 import Image from 'next/image';
 import { School } from '../../../repositories/schoolList';
 import BorderLabel from '../../atoms/BorderLabel';
@@ -6,17 +7,18 @@ import styles from './SchoolCard.module.css';
 
 type Props = {
   schoolKey: string,
-  school: School
+  school: School,
+  handleChange: ChangeEventHandler<HTMLInputElement>
 };
 
-const SchoolCard = ({schoolKey, school}: Props) => {
+const SchoolCard = ({schoolKey, school, handleChange}: Props) => {
   const labels = school.skills.map(skill => {
     return <BorderLabel text={skill} addCss={styles.skill} />;
   });
   return (
     <div className={styles.root}>
       <div className={styles.flexContainer}>
-        <Checkbox id={schoolKey} name={schoolKey} />
+        <Checkbox id={schoolKey} name={schoolKey} handleChange={handleChange}/>
         <h3 className={styles.schoolName}>{school.name}</h3>
       </div>
       <div className={styles.flexContainer}>
