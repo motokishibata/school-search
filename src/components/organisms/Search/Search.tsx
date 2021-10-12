@@ -3,7 +3,7 @@ import Button from '../../atoms/Button';
 import styles from './Search.module.css';
 import Checkbox from '../../atoms/Checkbox';
 import Dropdown from '../../atoms/Dropdown';
-import * as conditions from '../../../repositories/searchCondition';
+import {Conditions} from '../../../repositories/searchCondition';
 
 type ConditionProps = {
   header: string
@@ -21,7 +21,7 @@ const Condition = ({header, children}: ConditionProps) => {
   );
 }
 
-const Search = () => {
+const Search = ({conditions}: {conditions: Conditions}) => {
   const prices = <Dropdown name="price" options={conditions.prices} />; 
   const periods = <Dropdown name="period" options={conditions.periods} />; 
   return (
