@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 import { School, SchoolList } from '../../../repositories/schoolList';
 import styles from './CompareTable.module.css';
@@ -20,7 +19,7 @@ const Row = ({school}: { school: School}) => {
 
   return (
     <tr>
-      <th><Image src={school.thumbnail} width={70} height={70}/><br/>{school.name}</th>
+      <th><img src="150x150.png" width={70} height={70}/><br/>{school.name}</th>
       <td>{skills}</td>
       <td>{price}</td>
       <td>{period}</td>

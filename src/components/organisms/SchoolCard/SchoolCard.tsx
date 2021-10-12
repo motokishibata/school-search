@@ -1,5 +1,4 @@
 import { ChangeEventHandler } from 'react';
-import Image from 'next/image';
 import { School } from '../../../repositories/schoolList';
 import BorderLabel from '../../atoms/BorderLabel';
 import Checkbox from '../../atoms/Checkbox';
@@ -25,7 +24,7 @@ const SchoolCard = ({schoolKey, school, handleChange}: Props) => {
       </div>
       <div className={styles.flexContainer}>
         <div className={styles.thumbnail}>
-          <Image src={school.thumbnail}/>
+          <img src="/150x150.png" width={150} height={150}/>
         </div>
         <div>
           <LearnStyle

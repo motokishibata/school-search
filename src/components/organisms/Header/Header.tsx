@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styles from './Header.module.css';
 
 type Props = {
@@ -11,7 +10,7 @@ const Header = ({icon, title}: Props) => {
     <header className={styles.root}>
       <div className={styles.logo_container}>
         <a href="/">
-          <Image src={icon} width={50} height={50} />
+          <img src="/manta.png" width={50} height={50} />
         </a>
         <h1 className={styles.title}>{title}</h1>
       </div>
