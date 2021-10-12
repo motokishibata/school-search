@@ -18,7 +18,7 @@ example;example;example;example;example;
 [Google](https://www.google.co.jp/)
 
 ## image
-![マンタ](../assets/manta.png)
+![マンタ](/manta.png)
 
 ## list
 - aaa
