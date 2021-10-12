@@ -5,7 +5,7 @@ type Props = {
   id:string,
   name:string,
   text?:string,
-  handleChange: ChangeEventHandler<HTMLInputElement>
+  handleChange?: ChangeEventHandler<HTMLInputElement>
 };
 
 const Checkbox = ({id, name, text, handleChange}: Props) => {
