@@ -1,15 +1,10 @@
 import { ParsedUrlQuery } from 'querystring';
 import thumbnail from '../assets/150x150.png';
 
-type Period = {
-  value: number
-  unit: string // y:年, m:月, w:週
-};
-
 type Course = {
   name: string,
   price: number,
-  period: Period
+  period: number,
 };
 
 export type School = {
@@ -41,8 +36,8 @@ const schools: SchoolList = {
       detail: "https://google.com",
     },
     courses: [
-      { name: "AA", price: 100000, period: { value: 4, unit: 'm'} },
-      { name: "BB", price: 200000, period: { value: 1, unit: 'y'} }
+      { name: "AA", price: 100000, period: 16 },
+      { name: "BB", price: 200000, period: 48 }
     ]
   },
   techcamp: {
@@ -56,8 +51,8 @@ const schools: SchoolList = {
       detail: "https://google.com",
     },
     courses: [
-      { name: "AA", price: 30000, period: { value: 2, unit: 'w'}},
-      { name: "BB", price: 600000, period: { value: 6, unit: 'm'} }
+      { name: "AA", price: 30000, period: 2 },
+      { name: "BB", price: 600000, period: 24 }
     ]
   },
   samurai: {
@@ -71,8 +66,8 @@ const schools: SchoolList = {
       detail: "https://google.com",
     },
     courses: [
-      { name: "AA", price: 30000, period: { value: 2, unit: 'w'}},
-      { name: "BB", price: 800000, period: { value: 6, unit: 'm'} }
+      { name: "AA", price: 30000, period: 2},
+      { name: "BB", price: 800000, period: 24 }
     ]
   },
 }
@@ -80,7 +75,7 @@ const schools: SchoolList = {
 type Condition = {
   skills?: string[],
   price?: [number?, number?],
-  period?: string,
+  period?: [number?, number?],
   area?: string,
   target?: string,
   features?: string[]
@@ -102,7 +97,10 @@ export function toCondition(query: ParsedUrlQuery): Condition {
       condition['price'] = [lower, upper];
     }
     if (key === "period" && query[key] !== "") {
-      condition['period'] = query[key].toString();
+      const [left, right] = query[key].toString().split("_");
+      const lower = (left === "") ? null : parseInt(left);
+      const upper = (right === "") ? null : parseInt(right);
+      condition['period'] = [lower, upper];
     }
   }
 
@@ -163,46 +161,35 @@ export function getSchoolList(condition: Condition): SchoolList {
     }
   }
 
-  const isMatchPeriod = (period: string, school: School): boolean => {
+  const isMatchPeriod = ([lower, upper]: [number?, number?], school: School): boolean => {
+    if (!lower && !upper) {
+      return false;
+    }
+    
     const periods = school.courses.map(c => c.period);
-    switch (period) {
-      case "short": // ~1週間
-        for (const p of periods) {
-          if (p.unit === 'w' && p.value <= 1) {
-              return true;
-          }
+    if (lower && upper) {
+      for (const period of periods) {
+        if (lower <= period && period <= upper) {
+          return true;
         }
-        return false;
-      case "middle": // 1ヶ月~3ヶ月
-        for (const p of periods) {
-          if (p.unit === 'm' && p.value >= 1 && p.value <= 3) {
-            return true;
-          }
+      }
+      return false;
+    }
+    else if (!lower && upper) {
+      for (const period of periods) {
+        if (period <= upper) {
+          return true;
         }
-        return false;
-      case "long": // 4ヶ月~6ヶ月
-        for (const p of periods) {
-          if (p.unit === 'm' && p.value >= 4 && p.value <= 6) {
-            return true;
-          }
+      }
+      return false;
+    }
+    else {
+      for (const period of periods) {
+        if (lower <= period) {
+          return true;
         }
-        return false;
-      case "longlong": // 6ヶ月~12ヶ月
-        for (const p of periods) {
-          if (p.unit === 'm' && p.value >= 6 && p.value <= 12) {
-            return true;
-          }
-        }
-        return false;
-      case "verylong": // 1年~
-        for (const p of periods) {
-          if (p.unit === 'y' && p.value >= 1) {
-            return true;
-          }
-        }
-        return false;
-      default:
-        return false;
+      }
+      return false;
     }
   }
 
