@@ -1,0 +1,246 @@
+{
+  "techacademy": {
+    "name": "TechAcademy",
+    "summary": "オンライン完結のスクールとして実績が豊富。",
+    "thumbnail": "/150x150.png",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "skills": [
+      "HTML/CSS",
+      "Ruby",
+      "Ruby on Rails",
+      "Python"
+    ],
+    "url": {
+      "official": "https://techacademy.jp/",
+      "detail": "/posts/techacademy"
+    },
+    "courses": [
+      {
+        "name": "AA",
+        "price": 100000,
+        "period": 16
+      }
+    ]
+  },
+  "techcamp": {
+    "name": "テックキャンプ",
+    "summary": "オンライン完結のスクールとして実績が豊富。",
+    "thumbnail": "/150x150.png",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "skills": [
+      "HTML/CSS",
+      "Ruby",
+      "Ruby on Rails",
+      "Python"
+    ],
+    "url": {
+      "official": "https://tech-camp.in/",
+      "detail": "/posts/techcamp"
+    },
+    "courses": [
+      {
+        "name": "AA",
+        "price": 100000,
+        "period": 16
+      }
+    ]
+  },
+  "samurai": {
+    "name": "SAMURAIエンジニア塾",
+    "summary": "オーダーメイドのカリキュラム",
+    "thumbnail": "/150x150.png",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "skills": [
+      "HTML/CSS",
+      "Ruby",
+      "Ruby on Rails",
+      "Python"
+    ],
+    "url": {
+      "official": "https://www.sejuku.net/",
+      "detail": "/posts/samurai"
+    },
+    "courses": [
+      {
+        "name": "AA",
+        "price": 100000,
+        "period": 16
+      }
+    ]
+  },
+  "dmmwebcamp": {
+    "name": "DMM WEBCAMP",
+    "summary": "給付金支給",
+    "thumbnail": "/150x150.png",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "skills": [
+      "HTML/CSS",
+      "Ruby",
+      "Ruby on Rails",
+      "Python"
+    ],
+    "url": {
+      "official": "https://web-camp.io/",
+      "detail": "/posts/dmmwebcamp"
+    },
+    "courses": [
+      {
+        "name": "AA",
+        "price": 100000,
+        "period": 16
+      }
+    ]
+  },
+  "runteq": {
+    "name": "RUNTEQ（ランテック）",
+    "summary": "スタートアップ特化",
+    "thumbnail": "/150x150.png",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "skills": [
+      "HTML/CSS",
+      "Ruby",
+      "Ruby on Rails"
+    ],
+    "url": {
+      "official": "https://runteq.jp/",
+      "detail": "/posts/runteq"
+    },
+    "courses": [
+      {
+        "name": "AA",
+        "price": 100000,
+        "period": 16
+      }
+    ]
+  },
+  "geekjob": {
+    "name": "GEEK JOB",
+    "summary": "無料コースあり",
+    "thumbnail": "/150x150.png",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "skills": [
+      "HTML/CSS",
+      "Ruby",
+      "Ruby on Rails"
+    ],
+    "url": {
+      "official": "https://learn.geekjob.jp/",
+      "detail": "/posts/geekjob"
+    },
+    "courses": [
+      {
+        "name": "AA",
+        "price": 100000,
+        "period": 16
+      }
+    ]
+  },
+  "raisetech": {
+    "name": "RaiseTech",
+    "summary": "無料コースあり",
+    "thumbnail": "/150x150.png",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "skills": [
+      "HTML/CSS",
+      "Ruby",
+      "Ruby on Rails"
+    ],
+    "url": {
+      "official": "https://raise-tech.net/",
+      "detail": "/posts/raisetech"
+    },
+    "courses": [
+      {
+        "name": "AA",
+        "price": 100000,
+        "period": 16
+      }
+    ]
+  },
+  "potepancamp": {
+    "name": "ポテパンキャンプ",
+    "summary": "無料コースあり",
+    "thumbnail": "/150x150.png",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "skills": [
+      "HTML/CSS",
+      "Ruby",
+      "Ruby on Rails"
+    ],
+    "url": {
+      "official": "https://camp.potepan.com/",
+      "detail": "/posts/potepancamp"
+    },
+    "courses": [
+      {
+        "name": "AA",
+        "price": 100000,
+        "period": 16
+      }
+    ]
+  },
+  "chaty": {
+    "name": "CHATY",
+    "summary": "無料コースあり",
+    "thumbnail": "/150x150.png",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "skills": [
+      "HTML/CSS",
+      "Ruby",
+      "Ruby on Rails"
+    ],
+    "url": {
+      "official": "https://chaty.jp/",
+      "detail": "/posts/chaty"
+    },
+    "courses": [
+      {
+        "name": "AA",
+        "price": 100000,
+        "period": 16
+      }
+    ]
+  },
+  "dotpro": {
+    "name": ".Pro",
+    "summary": "無料コースあり",
+    "thumbnail": "/150x150.png",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "skills": [
+      "HTML/CSS",
+      "Ruby",
+      "Ruby on Rails"
+    ],
+    "url": {
+      "official": "https://dotpro.net/",
+      "detail": "/posts/dotpro"
+    },
+    "courses": [
+      {
+        "name": "AA",
+        "price": 100000,
+        "period": 16
+      }
+    ]
+  }
+}

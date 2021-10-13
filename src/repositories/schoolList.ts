@@ -1,5 +1,9 @@
 import { ParsedUrlQuery } from 'querystring';
-import thumbnail from '../assets/150x150.png';
+import schoolData from './schoolList.json';
+
+function getSchoolData() {
+  return JSON.parse(JSON.stringify(schoolData));
+}
 
 type Course = {
   name: string,
@@ -10,7 +14,7 @@ type Course = {
 export type School = {
   name: string,
   summary: string,
-  thumbnail: StaticImageData,
+  thumbnail: string,
   learnStyle: string[]
   skills: string[]
   url: {
@@ -24,53 +28,7 @@ export interface SchoolList {
   [key: string]: School
 }
 
-const schools: SchoolList = {
-  techacademy: {
-    name: "TechAcademy",
-    summary: "オンライン完結のスクールとして実績が豊富。",
-    thumbnail: thumbnail,
-    learnStyle: ["オンライン"],
-    skills: ["HTML/CSS", "Ruby", "Ruby on Rails", "Python"],
-    url: {
-      official: "https://techacademy.jp/",
-      detail: "/posts/techacademy",
-    },
-    courses: [
-      { name: "AA", price: 100000, period: 16 },
-      { name: "BB", price: 200000, period: 48 }
-    ]
-  },
-  techcamp: {
-    name: "テックキャンプ",
-    summary: "最短4週間で未経験からエンジニアを目指せる",
-    thumbnail: thumbnail,
-    learnStyle: ["オンライン", "通学"],
-    skills: ["HTML/CSS", "Ruby", "Ruby on Rails"],
-    url: {
-      official: "https://tech-camp.in/",
-      detail: "/posts/techcamp",
-    },
-    courses: [
-      { name: "AA", price: 30000, period: 2 },
-      { name: "BB", price: 600000, period: 24 }
-    ]
-  },
-  samurai: {
-    name: "SAMURAIエンジニア塾",
-    summary: "オーダーメイドのカリキュラム",
-    thumbnail: thumbnail,
-    learnStyle: ["オンライン"],
-    skills: ["ALL"],
-    url: {
-      official: "https://www.sejuku.net/",
-      detail: "/posts/samurai",
-    },
-    courses: [
-      { name: "AA", price: 30000, period: 2},
-      { name: "BB", price: 800000, period: 24 }
-    ]
-  },
-}
+const schools: SchoolList = schoolData;
 
 type Condition = {
   skills?: string[],

@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import Header from '../organisms/Header';
 
-import icon from '../../assets/manta.png';
-
 const title = "プログラミングスクール検索・一覧・比較";
 const Layout = ({children}) => {
   return (
@@ -10,7 +8,7 @@ const Layout = ({children}) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <Header icon={icon} title={title} />
+      <Header icon="/manta.png" title={title} />
       <main>
         {children}
       </main>
