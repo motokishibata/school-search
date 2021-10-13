@@ -62,7 +62,7 @@ type HorizontalButtonsProps = {
 const HorizontalButtons = (url : HorizontalButtonsProps) => {
   return (
     <div>
-        <a className={styles.linkButton} href={url.detail} target="_blank">詳細</a>
+        <a className={styles.linkButton} href={url.detail}>詳細</a>
         <a className={styles.linkButton} href={url.official} target="_blank">公式</a>
     </div>
   );

@@ -32,8 +32,8 @@ const schools: SchoolList = {
     learnStyle: ["オンライン"],
     skills: ["HTML/CSS", "Ruby", "Ruby on Rails", "Python"],
     url: {
-      official: "https://google.com",
-      detail: "https://google.com",
+      official: "https://techacademy.jp/",
+      detail: "/posts/techacademy",
     },
     courses: [
       { name: "AA", price: 100000, period: 16 },
@@ -47,8 +47,8 @@ const schools: SchoolList = {
     learnStyle: ["オンライン", "通学"],
     skills: ["HTML/CSS", "Ruby", "Ruby on Rails"],
     url: {
-      official: "https://google.com",
-      detail: "https://google.com",
+      official: "https://tech-camp.in/",
+      detail: "/posts/techcamp",
     },
     courses: [
       { name: "AA", price: 30000, period: 2 },
@@ -62,8 +62,8 @@ const schools: SchoolList = {
     learnStyle: ["オンライン"],
     skills: ["ALL"],
     url: {
-      official: "https://google.com",
-      detail: "https://google.com",
+      official: "https://www.sejuku.net/",
+      detail: "/posts/samurai",
     },
     courses: [
       { name: "AA", price: 30000, period: 2},
