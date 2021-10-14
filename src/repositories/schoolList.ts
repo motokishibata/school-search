@@ -1,7 +1,7 @@
 import { ParsedUrlQuery } from 'querystring';
 import schoolData from './schoolList.json';
 
-function getSchoolData() {
+function getSchoolData(): SchoolList {
   return JSON.parse(JSON.stringify(schoolData));
 }
 
@@ -28,7 +28,7 @@ export interface SchoolList {
   [key: string]: School
 }
 
-const schools: SchoolList = schoolData;
+//const schools: SchoolList = schoolData;
 
 type Condition = {
   skills?: string[],
@@ -73,6 +73,7 @@ function isEmpty(condition: Condition): boolean {
 }
 
 export function getSchoolList(condition: Condition): SchoolList {
+  const schools = getSchoolData();
   if (isEmpty(condition)) {
     return schools;
   }
