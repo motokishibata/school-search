@@ -1,5 +1,6 @@
 .root {
   padding: 5px var(--side-padding);
+  box-shadow: 0 1px 2px 0 rgba(100,100,100,0.5);
 }
 
 .logo_container {
