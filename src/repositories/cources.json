@@ -1,0 +1,73 @@
+{
+  "techacademy": [
+    {
+      "name": "Webアプリケーションコース",
+      "skills": ["Ruby", "Ruby on Rails"],
+      "plans": [
+        { "name": "4週間プラン","period": 4,
+          "prices": [
+            {"target": "社会人", "price": 139000},
+            {"target": "学生", "price": 109000}
+          ]
+        },
+        { "name": "8週間プラン", "period": 8,
+          "prices": [
+            {"target": "社会人", "price": 189000},
+            {"target": "学生", "price": 139000}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ブロックチェーンコース",
+      "skills": ["ブロックチェーン"],
+      "plans": [
+        {"name": "4週間プラン", "period": 4, "price": 139000},
+        {"name": "8週間プラン", "period": 8, "price": 189000},
+        {"name": "12週間プラン", "period": 12, "price": 239000}
+      ]
+    }
+  ],
+  "techcamp": [
+    {
+      "name": "プログラミング教養",
+      "skills": ["HTML/CSS", "Ruby on Rails", "JavaScript", "Git", "Python"],
+      "price": {
+        "admission": 217800,
+        "monthly": 21780
+      }
+    },
+    {
+      "name": "エンジニア転職",
+      "skills": ["HTML/CSS", "Ruby on Rails", "JavaScript", "Git", "AWS", "GitHub"],
+      "plans": [
+        {"name": "短期集中スタイル", "period": 10, "subplans": [
+          {"name": "オンラインプラン", "price": 657800},
+          {"name": "通学プラン", "price": 767800}
+        ]},
+        {"name": "夜間・休日スタイル", "period": 26, "subplans": [
+          {"name": "オンラインプラン", "price": 877800},
+          {"name": "通学プラン", "price": 987800}
+        ]}
+      ]
+    }
+  ],
+  "dmmwebcamp": [
+    {
+      "name": "DMM WEB CAMP COMMIT",
+      "skills": ["HTML/CSS", "JavaScript", "Ruby", "Ruby on Rails", "AI"],
+      "plans": [
+        {"name": "短期集中コース", "period": 12, "price": 690800},
+        {"name": "専門技術コース", "period": 16, "price": 910800}
+      ]
+    },
+    {
+      "name": "DMM WEB CAMP PRO",
+      "skills": ["HTML/CSS", "JavaScript", "Ruby", "Ruby on Rails", "Git"],
+      "plans": [
+        {"name": "転職志望コース(12週間)", "period": 12, "price": 624800},
+        {"name": "転職志望コース(16週間)", "period": 16, "price": 679800}
+      ]
+    }
+  ]
+}
