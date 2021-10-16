@@ -1,8 +1,16 @@
 import { ParsedUrlQuery } from 'querystring';
 import schoolData from './schoolList.json';
+import courceData from './cources.json';
 
 function getSchoolData(): SchoolList {
-  return JSON.parse(JSON.stringify(schoolData));
+  const schools = JSON.parse(JSON.stringify(schoolData));
+  const keys = Object.keys(schools);
+  for (const key of keys) {
+    if (key in courceData) {
+      schools[key].courses = courceData[key];
+    }
+  }
+  return schools;
 }
 
 type Course = {
