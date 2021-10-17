@@ -22,7 +22,7 @@ const SchoolCard = ({schoolKey, school, handleChange}: Props) => {
         </div>
         <h3 className={styles.schoolName}>{school.name}</h3>
       </div>
-      <div className={styles.flexContainer}>
+      <div className={styles.cardContainer}>
         <div className={styles.thumbnail}>
           <img src="/150x150.png" width={150} height={150}/>
         </div>
@@ -47,7 +47,7 @@ type LearnStyleProps = {
 
 const LearnStyle = ({isOnline, isOffline}: LearnStyleProps) => {
   return (
-    <div className={styles.flexContainer}>
+    <div>
       {isOnline && <p className={styles.learnStyle}>オンライン</p>}
       {isOffline && <p className={styles.learnStyle}>通学</p>}
     </div>
