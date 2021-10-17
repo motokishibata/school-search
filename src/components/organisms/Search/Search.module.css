@@ -20,9 +20,35 @@
   flex-wrap: wrap;
 }
 
-.flexItem {
+/* .flexItem {
   width: 25%;
+} */
+
+
+@media screen and (max-width: 360px){
+  .flexItem {
+    width: 100%;
+  }
 }
+
+@media screen and (min-width: 361px){
+  .flexItem {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 501px){
+  .flexItem {
+    width: 33%;
+  }
+}
+
+@media screen and (min-width: 631px){
+  .flexItem {
+    width: 25%;
+  }
+}
+
 
 .buttonContainer {
   padding: 10px;
