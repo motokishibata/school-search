@@ -24,7 +24,7 @@ const SchoolCard = ({schoolKey, school, handleChange}: Props) => {
       </div>
       <div className={styles.cardContainer}>
         <div className={styles.thumbnail}>
-          <img src="/150x150.png" width={150} height={150}/>
+          <img src={school.thumbnail} width={150} height={150}/>
         </div>
         <div>
           <LearnStyle

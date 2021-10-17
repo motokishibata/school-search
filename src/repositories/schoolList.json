@@ -2,7 +2,7 @@
   "techacademy": {
     "name": "TechAcademy",
     "summary": "オンライン完結のスクールとして実績が豊富。",
-    "thumbnail": "/150x150.png",
+    "thumbnail": "/techacademy_card.png",
     "learnStyle": [
       "オンライン"
     ],
@@ -27,7 +27,7 @@
   "techcamp": {
     "name": "テックキャンプ",
     "summary": "オンライン完結のスクールとして実績が豊富。",
-    "thumbnail": "/150x150.png",
+    "thumbnail": "/techcamp_card.png",
     "learnStyle": [
       "オンライン"
     ],
