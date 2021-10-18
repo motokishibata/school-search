@@ -4,27 +4,23 @@
       "name": "Webアプリケーションコース",
       "skills": ["Ruby", "Ruby on Rails"],
       "plans": [
-        { "name": "4週間プラン","period": 4,
-          "prices": [
-            {"target": "社会人", "price": 139000},
-            {"target": "学生", "price": 109000}
-          ]
-        },
-        { "name": "8週間プラン", "period": 8,
-          "prices": [
-            {"target": "社会人", "price": 189000},
-            {"target": "学生", "price": 139000}
-          ]
-        }
+        {"name": "4週間プラン","period": 4, "subplans": [
+            {"target": "社会人", "tuitionFee": 139000},
+            {"target": "学生", "tuitionFee": 109000}
+        ]},
+        {"name": "8週間プラン", "period": 8, "subplans": [
+            {"target": "社会人", "tuitionFee": 189000},
+            {"target": "学生", "tuitionFee": 139000}
+        ]}
       ]
     },
     {
       "name": "ブロックチェーンコース",
       "skills": ["ブロックチェーン"],
       "plans": [
-        {"name": "4週間プラン", "period": 4, "price": 139000},
-        {"name": "8週間プラン", "period": 8, "price": 189000},
-        {"name": "12週間プラン", "period": 12, "price": 239000}
+        {"name": "4週間プラン", "period": 4, "tuitionFee": 139000},
+        {"name": "8週間プラン", "period": 8, "tuitionFee": 189000},
+        {"name": "12週間プラン", "period": 12, "tuitionFee": 239000}
       ]
     }
   ],
@@ -32,22 +28,19 @@
     {
       "name": "プログラミング教養",
       "skills": ["HTML/CSS", "Ruby on Rails", "JavaScript", "Git", "Python"],
-      "price": {
-        "admission": 217800,
-        "monthly": 21780
-      }
+      "plans": [{"admissionFee": 217800, "monthlyFee": 21780}]
     },
     {
       "name": "エンジニア転職",
       "skills": ["HTML/CSS", "Ruby on Rails", "JavaScript", "Git", "AWS", "GitHub"],
       "plans": [
-        {"name": "短期集中スタイル", "period": 10, "prices": [
-          {"name": "オンラインプラン", "price": 657800},
-          {"name": "通学プラン", "price": 767800}
+        {"name": "短期集中スタイル", "period": 10, "subplans": [
+          {"name": "オンラインプラン", "tuitionFee": 657800},
+          {"name": "通学プラン", "tuitionFee": 767800}
         ]},
-        {"name": "夜間・休日スタイル", "period": 26, "prices": [
-          {"name": "オンラインプラン", "price": 877800},
-          {"name": "通学プラン", "price": 987800}
+        {"name": "夜間・休日スタイル", "period": 26, "subplans": [
+          {"name": "オンラインプラン", "tuitionFee": 877800},
+          {"name": "通学プラン", "tuitionFee": 987800}
         ]}
       ]
     }
@@ -57,16 +50,16 @@
       "name": "DMM WEB CAMP COMMIT",
       "skills": ["HTML/CSS", "JavaScript", "Ruby", "Ruby on Rails", "AI"],
       "plans": [
-        {"name": "短期集中コース", "period": 12, "price": 690800},
-        {"name": "専門技術コース", "period": 16, "price": 910800}
+        {"name": "短期集中コース", "period": 12, "tuitionFee": 690800},
+        {"name": "専門技術コース", "period": 16, "tuitionFee": 910800}
       ]
     },
     {
       "name": "DMM WEB CAMP PRO",
       "skills": ["HTML/CSS", "JavaScript", "Ruby", "Ruby on Rails", "Git"],
       "plans": [
-        {"name": "転職志望コース(12週間)", "period": 12, "price": 624800},
-        {"name": "転職志望コース(16週間)", "period": 16, "price": 679800}
+        {"name": "転職志望コース(12週間)", "period": 12, "tuitionFee": 624800},
+        {"name": "転職志望コース(16週間)", "period": 16, "tuitionFee": 679800}
       ]
     }
   ],
@@ -75,17 +68,17 @@
       "name": "デビューコース",
       "skills": [""],
       "plans": [
-        {"name": "4週間プラン", "period": 4, "prices": [
-          {"target": "社会人", "price": {"admission": 98000, "tuition": 68000}},
-          {"target": "学生", "price": {"admission": 98000, "tuition": 64600}}
+        {"name": "4週間プラン", "period": 4, "subplans": [
+          {"target": "社会人", "admissionFee": 98000, "tuitionFee": 68000},
+          {"target": "学生", "admissionFee": 98000, "tuitionFee": 64600}
         ]},
         {"name": "12週間プラン", "period": 13, "prices": [
-          {"target": "社会人", "price": {"admission": 98000, "tuition": 198000}},
-          {"target": "学生", "price": {"admission": 98000, "tuition": 188100}}
+          {"target": "社会人", "admissionFee": 98000, "tuitionFee": 198000},
+          {"target": "学生", "admissionFee": 98000, "tuitionFee": 188100}
         ]},
         {"name": "24週間プラン", "period": 26, "prices": [
-          {"target": "社会人", "price": {"admission": 98000, "tuition": 298000}},
-          {"target": "学生", "price": {"admission": 98000, "tuition": 283100}}
+          {"target": "社会人", "admissionFee": 98000, "tuitionFee": 298000},
+          {"target": "学生", "admissionFee": 98000, "tuitionFee": 283100}
         ]}
       ]
     }
@@ -94,32 +87,28 @@
     {
       "name": "Webマスターコース",
       "skills": ["HTML/CSS", "JavaScript", "Ruby", "Ruby on Rails", "Git", "Command Line", "SQL"],
-      "period": 36,
-      "price": 437800
+      "plans": [{"period": 36, "tuitionFee": 437800}]
     }
   ],
   "geekjob": [
     {
       "name": "プレミアム転職コース",
       "skills": ["HTML/CSS", "JavaScript", "Git", "GitHub", "Java", "Ruby", "Ruby on Rails", "Web API", "Apache Tomcat"],
-      "period": 12,
-      "price": 437000
+      "plans": [{"period": 12, "tuitionFee": 437000}]
     }
   ],
   "raisetech": [
     {
       "name": "Javaフルコース",
       "skills": ["Java", "JUnit", "Selenide", "Jenkins", "AWS", "GitHub"],
-      "lessons": 16,
-      "price": 448000
+      "plans": [{"lessons": 16, "tuitionFee": 448000}]
     }
   ],
   "potepancamp": [
     {
       "name": "Railsキャリアコース",
       "skills": ["HTML/CSS", "JavaScript", "Ruby", "Ruby on Rails", "RSpec", "Docker", "CircleCI", "SQL", "Git", "Command Line"],
-      "period": 20,
-      "price": 440000
+      "plans": [{"period": 20, "tuitionFee": 440000}]
     }
   ],
   "chaty": [
@@ -127,8 +116,8 @@
       "name": "ReactNativeパーソナル",
       "skills": ["HTML/CSS", "JavaScript", "Git", "React.js", "ReactNative", "MySQL", "Node.js", "EXPO", "WebSocket", "AWS", "GitHub"],
       "plans": [
-        {"name": "3ヶ月プラン", "period": 12, "price": {"admission": 110000, "tuition": 547800}},
-        {"name": "5ヶ月プラン", "period": 20, "price": {"admission": 110000, "tuition": 547800}}
+        {"name": "3ヶ月プラン", "period": 12, "admissionFee": 110000, "tuitionFee": 547800},
+        {"name": "5ヶ月プラン", "period": 20, "admissionFee": 110000, "tuitionFee": 547800}
       ]
     }
   ],
@@ -136,8 +125,7 @@
     {
       "name": "AI×Djangoコース",
       "skills": ["Python", "Keras", "Numpy", "Messaging API", "Flask", "Django", "pandas", "sckit-learn"],
-      "period": 24,
-      "price": 547800
+      "plans": [{"period": 24, "tuitionFee": 547800}]
     }
   ]
 }
