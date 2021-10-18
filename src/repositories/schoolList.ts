@@ -1,15 +1,34 @@
 import { ParsedUrlQuery } from 'querystring';
 import schoolData from './schoolList.json';
+import courceData from './cources.json';
 
 function getSchoolData(): SchoolList {
-  return JSON.parse(JSON.stringify(schoolData));
+  const schools = JSON.parse(JSON.stringify(schoolData));
+  const keys = Object.keys(schools);
+  for (const key of keys) {
+    if (key in courceData) {
+      schools[key].courses = courceData[key];
+    }
+  }
+  return schools;
 }
 
 type Course = {
   name: string,
-  price: number,
-  period: number,
+  skills: string[],
+  plans: Plan[],
 };
+
+type Plan = Partial<{
+  name: string,
+  period: number,
+  lessons: number,
+  target: string,
+  addmisionFee: number,
+  monthlyFee: number,
+  tuitionFee: number
+  subplans: Plan[]
+}>;
 
 export type School = {
   name: string,
@@ -27,8 +46,6 @@ export type School = {
 export interface SchoolList {
   [key: string]: School
 }
-
-//const schools: SchoolList = schoolData;
 
 type Condition = {
   skills?: string[],
@@ -72,6 +89,82 @@ function isEmpty(condition: Condition): boolean {
   return Object.keys(condition).length === 0;
 }
 
+function isMatchSkill(skills: string[], school: School): boolean {
+  const schoolSkills = school.courses.flatMap(c => c.skills);
+  for (const skill of skills) {
+    if (schoolSkills.includes(skill)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function isMatchPrice([lower, upper]: [number?, number?], school: School): boolean {
+  if (!lower && !upper) {
+    return false;
+  }
+  
+  const plans = school.courses.map(course => course.plans).flat();
+  const coursePrices = plans.map(p => p.tuitionFee);
+  if (lower && upper) {
+    for (const price of coursePrices) {
+      if (lower <= price && price <= upper) {
+        return true;
+      }
+    }
+    return false;
+  }
+  else if (!lower && upper) {
+    for (const price of coursePrices) {
+      if (price <= upper) {
+        return true;
+      }
+    }
+    return false;
+  }
+  else {
+    for (const price of coursePrices) {
+      if (lower <= price) {
+        return true;
+      }
+    }
+    return false;
+  }
+}
+
+function isMatchPeriod([lower, upper]: [number?, number?], school: School): boolean {
+  if (!lower && !upper) {
+    return false;
+  }
+  
+  const plans = school.courses.flatMap(c => c.plans);
+  const periods = plans.map(p => p.period);
+  if (lower && upper) {
+    for (const period of periods) {
+      if (lower <= period && period <= upper) {
+        return true;
+      }
+    }
+    return false;
+  }
+  else if (!lower && upper) {
+    for (const period of periods) {
+      if (period <= upper) {
+        return true;
+      }
+    }
+    return false;
+  }
+  else {
+    for (const period of periods) {
+      if (lower <= period) {
+        return true;
+      }
+    }
+    return false;
+  }
+}
+
 export function getSchoolList(condition: Condition): SchoolList {
   const schools = getSchoolData();
   if (isEmpty(condition)) {
@@ -79,79 +172,6 @@ export function getSchoolList(condition: Condition): SchoolList {
   }
   
   const result: SchoolList = {};
-  const isMatchSkill = (skills: string[], school: School): boolean => {
-    for (const skill of skills) {
-      if (school.skills.includes(skill)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  const isMatchPrice = ([lower, upper]: [number?, number?], school: School): boolean => {
-    if (!lower && !upper) {
-      return false;
-    }
-    
-    const coursePrices = school.courses.map(course => course.price);
-    if (lower && upper) {
-      for (const price of coursePrices) {
-        if (lower <= price && price <= upper) {
-          return true;
-        }
-      }
-      return false;
-    }
-    else if (!lower && upper) {
-      for (const price of coursePrices) {
-        if (price <= upper) {
-          return true;
-        }
-      }
-      return false;
-    }
-    else {
-      for (const price of coursePrices) {
-        if (lower <= price) {
-          return true;
-        }
-      }
-      return false;
-    }
-  }
-
-  const isMatchPeriod = ([lower, upper]: [number?, number?], school: School): boolean => {
-    if (!lower && !upper) {
-      return false;
-    }
-    
-    const periods = school.courses.map(c => c.period);
-    if (lower && upper) {
-      for (const period of periods) {
-        if (lower <= period && period <= upper) {
-          return true;
-        }
-      }
-      return false;
-    }
-    else if (!lower && upper) {
-      for (const period of periods) {
-        if (period <= upper) {
-          return true;
-        }
-      }
-      return false;
-    }
-    else {
-      for (const period of periods) {
-        if (lower <= period) {
-          return true;
-        }
-      }
-      return false;
-    }
-  }
-
   for (const key of Object.keys(schools)) {
     const school = schools[key];
     if (condition.skills && isMatchSkill(condition.skills, school)) {
