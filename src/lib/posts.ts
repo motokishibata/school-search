@@ -5,6 +5,8 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
+import { getSchool } from '../repositories/schoolList';
+
 const postsDirectory = path.join(process.cwd(), 'src', 'posts');
 
 export async function getPostData(id: string) {
@@ -18,8 +20,11 @@ export async function getPostData(id: string) {
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
+  const school = getSchool(id);
+
   return {
     id,
+    school,
     contentHtml,
     ...matterResult.data
   };
