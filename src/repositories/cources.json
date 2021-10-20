@@ -66,7 +66,7 @@
   "samurai": [
     {
       "name": "デビューコース",
-      "skills": [""],
+      "skills": ["All"],
       "plans": [
         {"name": "4週間プラン", "period": 4, "subplans": [
           {"target": "社会人", "admissionFee": 98000, "tuitionFee": 68000},

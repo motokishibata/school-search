@@ -11,7 +11,8 @@ type Props = {
 };
 
 const SchoolCard = ({schoolKey, school, handleChange}: Props) => {
-  const labels = school.skills.map(skill => {
+  const skills = school.courses.flatMap(c => c.skills);
+  const labels = skills.map(skill => {
     return <BorderLabel text={skill} addCss={styles.skill} />;
   });
   return (
