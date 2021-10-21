@@ -2,6 +2,11 @@ import { ParsedUrlQuery } from 'querystring';
 import schoolData from './schoolList.json';
 import courceData from './cources.json';
 
+export function getSchool(id: string): School {
+  const schools = getSchoolData();
+  return schools[id];
+}
+
 function getSchoolData(): SchoolList {
   const schools = JSON.parse(JSON.stringify(schoolData));
   const keys = Object.keys(schools);
