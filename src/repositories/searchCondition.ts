@@ -1,7 +1,15 @@
 import data from './searchCondition.json';
 
+export type SkillConditions = {
+	langage: string[],
+	framework: string[],
+	database: string[],
+	cloud: string[],
+	virtual: string[],
+	tool: string[]
+}
 export type Conditions = {
-	skills: string[],
+	skills: SkillConditions,
 	prices: RangeOption[],
 	learnStyles: string[],
 	periods: RangeOption[],
@@ -17,7 +25,7 @@ export type RangeOption = {
 	display: string
 };
 
-const skills: string[] = data.skill;
+const skills: SkillConditions = data.skill;
 const prices: RangeOption[] = data.price.map(p => {
 		return {
 			range: {
