@@ -15,14 +15,7 @@
     "url": {
       "official": "https://techacademy.jp/",
       "detail": "/posts/techacademy"
-    },
-    "courses": [
-      {
-        "name": "AA",
-        "price": 100000,
-        "period": 16
-      }
-    ]
+    }
   },
   "techcamp": {
     "name": "テックキャンプ",
@@ -40,14 +33,7 @@
     "url": {
       "official": "https://tech-camp.in/",
       "detail": "/posts/techcamp"
-    },
-    "courses": [
-      {
-        "name": "AA",
-        "price": 100000,
-        "period": 16
-      }
-    ]
+    }
   },
   "samurai": {
     "name": "SAMURAIエンジニア塾",
@@ -65,14 +51,7 @@
     "url": {
       "official": "https://www.sejuku.net/",
       "detail": "/posts/samurai"
-    },
-    "courses": [
-      {
-        "name": "AA",
-        "price": 100000,
-        "period": 16
-      }
-    ]
+    }
   },
   "dmmwebcamp": {
     "name": "DMM WEBCAMP",
@@ -90,14 +69,7 @@
     "url": {
       "official": "https://web-camp.io/",
       "detail": "/posts/dmmwebcamp"
-    },
-    "courses": [
-      {
-        "name": "AA",
-        "price": 100000,
-        "period": 16
-      }
-    ]
+    }
   },
   "runteq": {
     "name": "RUNTEQ（ランテック）",
@@ -114,14 +86,7 @@
     "url": {
       "official": "https://runteq.jp/",
       "detail": "/posts/runteq"
-    },
-    "courses": [
-      {
-        "name": "AA",
-        "price": 100000,
-        "period": 16
-      }
-    ]
+    }
   },
   "geekjob": {
     "name": "GEEK JOB",
@@ -138,14 +103,7 @@
     "url": {
       "official": "https://learn.geekjob.jp/",
       "detail": "/posts/geekjob"
-    },
-    "courses": [
-      {
-        "name": "AA",
-        "price": 100000,
-        "period": 16
-      }
-    ]
+    }
   },
   "raisetech": {
     "name": "RaiseTech",
@@ -162,14 +120,7 @@
     "url": {
       "official": "https://raise-tech.net/",
       "detail": "/posts/raisetech"
-    },
-    "courses": [
-      {
-        "name": "AA",
-        "price": 100000,
-        "period": 16
-      }
-    ]
+    }
   },
   "potepancamp": {
     "name": "ポテパンキャンプ",
@@ -186,14 +137,7 @@
     "url": {
       "official": "https://camp.potepan.com/",
       "detail": "/posts/potepancamp"
-    },
-    "courses": [
-      {
-        "name": "AA",
-        "price": 100000,
-        "period": 16
-      }
-    ]
+    }
   },
   "chaty": {
     "name": "CHATY",
@@ -210,14 +154,7 @@
     "url": {
       "official": "https://chaty.jp/",
       "detail": "/posts/chaty"
-    },
-    "courses": [
-      {
-        "name": "AA",
-        "price": 100000,
-        "period": 16
-      }
-    ]
+    }
   },
   "dotpro": {
     "name": ".Pro",
@@ -234,13 +171,6 @@
     "url": {
       "official": "https://dotpro.net/",
       "detail": "/posts/dotpro"
-    },
-    "courses": [
-      {
-        "name": "AA",
-        "price": 100000,
-        "period": 16
-      }
-    ]
+    }
   }
 }
