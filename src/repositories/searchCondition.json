@@ -1,12 +1,26 @@
 {
-  "skill": [
-    "HTML/CSS", "JavaScript", "TypeScript", "React", "Vue",
-    "Angular", "Ruby", "Ruby on Rails", "Python", "Django",
-    "Flask", "PHP", "Lravel", "CakePHP", "Java", "Spring boot",
-    "C/C++", "C#", "Unity","Go", "Rust", "Kotlin", "Swift",
-	  "VBA", "AWS", "GCP", "Azure", "Firebase", "MySQL", "PostgleSQL",
-    "OracleDB", "SQL Server", "Redis", "MongoDB", "Docker", "Kubenetes"
-  ],
+  "skill": {
+    "langage": [
+      "HTML/CSS", "JavaScript", "TypeScript", "Ruby", "Python", "PHP",
+      "Java", "C/C++", "C#", "Go", "Rust", "Kotlin", "Swift", "VBA"
+    ],
+    "framework": [
+      "React", "Vue", "Angular", "Ruby on Rails", "Django", "Flask",
+      "Lravel", "CakePHP", "Spring boot"
+    ],
+    "database": [
+      "MySQL", "PostgleSQL", "OracleDB", "SQL Server", "Redis", "MongoDB"
+    ],
+    "cloud": [
+      "AWS", "GCP", "Azure", "Firebase"
+    ],
+    "virtual": [
+      "Docker", "Kubenetes"
+    ],
+    "tool": [
+      "Unity", "Visual Studio", "VSCode", "NetBeans"  
+    ]
+  },
   "style": [
     "オンライン", "通学"
   ],
