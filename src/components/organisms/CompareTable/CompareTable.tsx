@@ -3,27 +3,35 @@ import { School, SchoolList } from '../../../repositories/schoolList';
 import styles from './CompareTable.module.css';
 
 const Row = ({school}: { school: School}) => {
-  const skills = (
-    <>
-    {school.skills.map((skill, index) => {
-      return <React.Fragment key={index}>{skill}<br/></React.Fragment>;
-    })}
-    </>
-  );
-
-  const prices = school.courses.map(course => course.price);
-  const price = `${Math.min(...prices)}円 ~ ${Math.max(...prices)}円`
-
-  const periods = school.courses.map(course => course.period);
-  const period = `${Math.min(...periods)}週間 ~ ${Math.max(...periods)}週間`
+  const courses = school.courses;
+  const allPlan = courses.flatMap(c => c.plans);
 
   return (
-    <tr>
-      <th><img src="150x150.png" width={70} height={70}/><br/>{school.name}</th>
-      <td>{skills}</td>
-      <td>{price}</td>
-      <td>{period}</td>
-    </tr>
+    <>
+    {courses.map((course, cIndex) => {
+      const planCount = course.plans.length;
+      return course.plans.map((plan, pIndex) => {
+        const isFirst = (cIndex === 0) && (pIndex === 0);
+        return (
+          <tr>
+            {isFirst && 
+              <td rowSpan={allPlan.length}>
+                <img src={school.thumbnail} width={70} height={70}/><br/>{school.name}
+              </td>
+            }
+            {pIndex === 0 &&
+              <>
+              <td rowSpan={planCount}>{course.name}</td>
+              <td rowSpan={planCount}>{course.skills}</td>
+              </>
+            }
+            <td>入会金：{plan.addmisionFee}<br/>総額：{plan.tuitionFee}<br/>月額：{plan.monthlyFee}</td>
+            <td>{plan.period}週間</td>
+          </tr>
+        );
+      });
+    })}
+    </>
   );
 }
 
@@ -36,6 +44,7 @@ const CompareTable = ({schools}: {schools: SchoolList}) => {
         <thead>
           <tr>
             <th>スクール</th>
+            <th>コース</th>
             <th>スキル</th>
             <th>価格</th>
             <th>期間</th>
