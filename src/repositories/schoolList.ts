@@ -24,7 +24,7 @@ type Course = {
   plans: Plan[],
 };
 
-type Plan = Partial<{
+export type Plan = Partial<{
   name: string,
   period: number,
   lessons: number,
@@ -32,7 +32,7 @@ type Plan = Partial<{
   addmisionFee: number,
   monthlyFee: number,
   tuitionFee: number
-  subplans: Plan[]
+  subplans: Omit<Plan, "subplans">[]
 }>;
 
 export type School = {

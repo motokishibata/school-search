@@ -1,6 +1,70 @@
 import React from 'react';
-import { School, SchoolList } from '../../../repositories/schoolList';
+import { School, SchoolList, Plan } from '../../../repositories/schoolList';
 import styles from './CompareTable.module.css';
+
+const Prices = ({plan}: {plan: Plan}) => {
+  let addmisionFee = null;
+  if (plan.addmisionFee) {
+    addmisionFee = <span>入学金：{plan.addmisionFee}</span>;
+  }
+
+  let tuitionFee = null;
+  if (plan.tuitionFee) {
+    tuitionFee = <span>受講料：{plan.tuitionFee}</span>;
+  }
+
+  let monthlyFee = null;
+  if (plan.monthlyFee) {
+    monthlyFee = <span>月額：{plan.monthlyFee}</span>;
+  }
+
+  return (
+    <>
+    {addmisionFee && React.createElement("<br/>")}
+    {tuitionFee && React.createElement("<br/>")}
+    {monthlyFee}
+    </>
+  );
+}
+
+const PlanElement = ({plan}: {plan: Plan}) => {
+  let addmisionFee = null;
+  if (plan.addmisionFee) {
+    addmisionFee = <><span>入学金：{plan.addmisionFee}</span><br/></>;
+  }
+
+  let tuitionFee = null;
+  if (plan.tuitionFee) {
+    tuitionFee = <><span>受講料：{plan.tuitionFee}</span><br/></>;
+  }
+
+  let monthlyFee = null;
+  if (plan.monthlyFee) {
+    monthlyFee = <><span>月額：{plan.monthlyFee}</span><br/></>;
+  }
+
+  const price = (
+    <td>
+      {addmisionFee}
+      {tuitionFee}
+      {monthlyFee}
+      {plan.subplans && plan.subplans.map(sub => {
+        if (sub.name) {
+          return `${sub.name}：${sub.tuitionFee}`;
+        } else {
+          return `${sub.target}：${sub.tuitionFee}`;
+        }
+      })}
+    </td>
+  );
+
+  return (
+    <>
+    {price}
+    <td>{plan.period}週間</td>
+    </>
+  );
+}
 
 const Row = ({school}: { school: School}) => {
   const courses = school.courses;
@@ -25,8 +89,7 @@ const Row = ({school}: { school: School}) => {
               <td rowSpan={planCount}>{course.skills}</td>
               </>
             }
-            <td>入会金：{plan.addmisionFee}<br/>総額：{plan.tuitionFee}<br/>月額：{plan.monthlyFee}</td>
-            <td>{plan.period}週間</td>
+            <PlanElement plan={plan}/>
           </tr>
         );
       });

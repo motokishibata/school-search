@@ -23,4 +23,5 @@
 
 .table th {
   background-color: var(--diluted-main-color);
+  width: 20%;
 }
