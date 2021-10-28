@@ -1,29 +1,97 @@
 import React from 'react';
-import { School, SchoolList } from '../../../repositories/schoolList';
+import { School, SchoolList, Plan } from '../../../repositories/schoolList';
 import styles from './CompareTable.module.css';
 
-const Row = ({school}: { school: School}) => {
-  const skills = (
-    <>
-    {school.skills.map((skill, index) => {
-      return <React.Fragment key={index}>{skill}<br/></React.Fragment>;
-    })}
-    </>
-  );
+const Prices = ({plan}: {plan: Plan}) => {
+  if (plan.subplans) {
+    const subplans = plan.subplans.map(p => {
+        let target = null;
+        if (p.target) {
+          target = <p>【{p.target}】</p>;
+        }
+        let name = null;
+        if (p.name) {
+          name = <p>【{p.name}】</p>;
+        }
+        let addmisionFee = null;
+        if (p.addmisionFee) {
+          addmisionFee = <p>入学金：{p.addmisionFee}円</p>
+        }
+        
+        return (
+          <>
+            {name}
+            {target}
+            {addmisionFee}
+            <p>受講料：{p.tuitionFee}円</p>
+          </>
+        )
+    });
+    return <>{subplans}</>;
+  }
+  let addmisionFee = null;
+  if (plan.addmisionFee) {
+    addmisionFee = <p>入学金：{plan.addmisionFee}円</p>;
+  }
 
-  const prices = school.courses.map(course => course.price);
-  const price = `${Math.min(...prices)}円 ~ ${Math.max(...prices)}円`
+  let tuitionFee = null;
+  if (plan.tuitionFee) {
+    tuitionFee = <p>受講料：{plan.tuitionFee}円</p>;
+  }
 
-  const periods = school.courses.map(course => course.period);
-  const period = `${Math.min(...periods)}週間 ~ ${Math.max(...periods)}週間`
+  let monthlyFee = null;
+  if (plan.monthlyFee) {
+    monthlyFee = <p>月額：{plan.monthlyFee}円</p>;
+  }
 
   return (
-    <tr>
-      <th><img src="150x150.png" width={70} height={70}/><br/>{school.name}</th>
-      <td>{skills}</td>
-      <td>{price}</td>
-      <td>{period}</td>
-    </tr>
+    <>
+    {addmisionFee}
+    {tuitionFee}
+    {monthlyFee}
+    </>
+  );
+}
+
+const PlanElement = ({plan}: {plan: Plan}) => {
+
+  return (
+    <>
+    <td><Prices plan={plan}/></td>
+    <td>{plan.period}{plan.period ? "週間" : "-"}</td>
+    </>
+  );
+}
+
+const Row = ({school}: { school: School}) => {
+  const courses = school.courses;
+  const allPlan = courses.flatMap(c => c.plans);
+
+  return (
+    <>
+    {courses.map((course, cIndex) => {
+      const planCount = course.plans.length;
+      return course.plans.map((plan, pIndex) => {
+        const isFirst = (cIndex === 0) && (pIndex === 0);
+        return (
+          <tr>
+            {isFirst && 
+              <td rowSpan={allPlan.length}>
+                <img src={school.thumbnail} width={70} height={70}/><br/>{school.name}
+              </td>
+            }
+            {pIndex === 0 &&
+              <>
+              <td rowSpan={planCount}>{course.name}</td>
+              <td rowSpan={planCount}>{course.skills}</td>
+              </>
+            }
+            <PlanElement plan={plan}/>
+          </tr>
+        );
+      });
+    })}
+    </>
   );
 }
 
@@ -36,6 +104,7 @@ const CompareTable = ({schools}: {schools: SchoolList}) => {
         <thead>
           <tr>
             <th>スクール</th>
+            <th>コース</th>
             <th>スキル</th>
             <th>価格</th>
             <th>期間</th>
