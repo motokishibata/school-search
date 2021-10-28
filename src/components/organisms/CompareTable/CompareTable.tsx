@@ -3,65 +3,62 @@ import { School, SchoolList, Plan } from '../../../repositories/schoolList';
 import styles from './CompareTable.module.css';
 
 const Prices = ({plan}: {plan: Plan}) => {
+  if (plan.subplans) {
+    const subplans = plan.subplans.map(p => {
+        let target = null;
+        if (p.target) {
+          target = <p>【{p.target}】</p>;
+        }
+        let name = null;
+        if (p.name) {
+          name = <p>【{p.name}】</p>;
+        }
+        let addmisionFee = null;
+        if (p.addmisionFee) {
+          addmisionFee = <p>入学金：{p.addmisionFee}円</p>
+        }
+        
+        return (
+          <>
+            {name}
+            {target}
+            {addmisionFee}
+            <p>受講料：{p.tuitionFee}円</p>
+          </>
+        )
+    });
+    return <>{subplans}</>;
+  }
   let addmisionFee = null;
   if (plan.addmisionFee) {
-    addmisionFee = <span>入学金：{plan.addmisionFee}</span>;
+    addmisionFee = <p>入学金：{plan.addmisionFee}円</p>;
   }
 
   let tuitionFee = null;
   if (plan.tuitionFee) {
-    tuitionFee = <span>受講料：{plan.tuitionFee}</span>;
+    tuitionFee = <p>受講料：{plan.tuitionFee}円</p>;
   }
 
   let monthlyFee = null;
   if (plan.monthlyFee) {
-    monthlyFee = <span>月額：{plan.monthlyFee}</span>;
+    monthlyFee = <p>月額：{plan.monthlyFee}円</p>;
   }
 
   return (
     <>
-    {addmisionFee && React.createElement("<br/>")}
-    {tuitionFee && React.createElement("<br/>")}
+    {addmisionFee}
+    {tuitionFee}
     {monthlyFee}
     </>
   );
 }
 
 const PlanElement = ({plan}: {plan: Plan}) => {
-  let addmisionFee = null;
-  if (plan.addmisionFee) {
-    addmisionFee = <><span>入学金：{plan.addmisionFee}</span><br/></>;
-  }
-
-  let tuitionFee = null;
-  if (plan.tuitionFee) {
-    tuitionFee = <><span>受講料：{plan.tuitionFee}</span><br/></>;
-  }
-
-  let monthlyFee = null;
-  if (plan.monthlyFee) {
-    monthlyFee = <><span>月額：{plan.monthlyFee}</span><br/></>;
-  }
-
-  const price = (
-    <td>
-      {addmisionFee}
-      {tuitionFee}
-      {monthlyFee}
-      {plan.subplans && plan.subplans.map(sub => {
-        if (sub.name) {
-          return `${sub.name}：${sub.tuitionFee}`;
-        } else {
-          return `${sub.target}：${sub.tuitionFee}`;
-        }
-      })}
-    </td>
-  );
 
   return (
     <>
-    {price}
-    <td>{plan.period}週間</td>
+    <td><Prices plan={plan}/></td>
+    <td>{plan.period}{plan.period ? "週間" : "-"}</td>
     </>
   );
 }
