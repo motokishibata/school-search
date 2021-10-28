@@ -72,11 +72,11 @@
           {"target": "社会人", "admissionFee": 98000, "tuitionFee": 68000},
           {"target": "学生", "admissionFee": 98000, "tuitionFee": 64600}
         ]},
-        {"name": "12週間プラン", "period": 13, "prices": [
+        {"name": "12週間プラン", "period": 13, "subplans": [
           {"target": "社会人", "admissionFee": 98000, "tuitionFee": 198000},
           {"target": "学生", "admissionFee": 98000, "tuitionFee": 188100}
         ]},
-        {"name": "24週間プラン", "period": 26, "prices": [
+        {"name": "24週間プラン", "period": 26, "subplans": [
           {"target": "社会人", "admissionFee": 98000, "tuitionFee": 298000},
           {"target": "学生", "admissionFee": 98000, "tuitionFee": 283100}
         ]}
