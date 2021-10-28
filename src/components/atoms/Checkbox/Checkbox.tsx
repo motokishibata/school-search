@@ -5,13 +5,14 @@ type Props = {
   id:string,
   name:string,
   text?:string,
+  checked:boolean,
   handleChange?: ChangeEventHandler<HTMLInputElement>
 };
 
-const Checkbox = ({id, name, text, handleChange}: Props) => {
+const Checkbox = ({id, name, text, checked, handleChange}: Props) => {
   return (
     <div className={styles.root}>
-      <input type="checkbox" name={name} id={id} onChange={handleChange}/>
+      <input type="checkbox" name={name} id={id} onChange={handleChange} defaultChecked={checked}/>
       <label htmlFor={id}>{text}</label>
     </div>
     

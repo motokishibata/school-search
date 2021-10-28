@@ -52,7 +52,7 @@ export interface SchoolList {
   [key: string]: School
 }
 
-type Condition = {
+export type Condition = {
   skills?: string[],
   price?: [number?, number?],
   period?: [number?, number?],
