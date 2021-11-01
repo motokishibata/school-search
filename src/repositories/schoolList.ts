@@ -58,29 +58,51 @@ export type Condition = {
   period?: [number?, number?],
   area?: string,
   target?: string,
-  features?: string[]
+  features?: string[],
+  learnStyles: {online: boolean, attendant: boolean}
 };
 
 export function toCondition(query: ParsedUrlQuery): Condition {
-  const condition: Condition = {};
+  const condition: Condition = {learnStyles: {online: false, attendant: false}};
   const skills: string[] = [];
   const keys = Object.keys(query);
   for (const key of keys) {
+    // スキル
     if (key.startsWith("skill_")) {
       const name = key.substring(6);
       skills.push(name);
     }
+    // 価格
     if (key === "price" && query[key] !== "") {
       const [left, right] = query[key].toString().split("_");
       const lower = (left === "") ? null : parseInt(left);
       const upper = (right === "") ? null : parseInt(right);
       condition['price'] = [lower, upper];
     }
+    // 期間
     if (key === "period" && query[key] !== "") {
       const [left, right] = query[key].toString().split("_");
       const lower = (left === "") ? null : parseInt(left);
       const upper = (right === "") ? null : parseInt(right);
       condition['period'] = [lower, upper];
+    }
+    // 学習スタイル
+    if (key.startsWith("learn_")) {
+      const style = key.substring(6);
+      if (style === "オンライン") {
+        condition.learnStyles.online = true;
+      }
+      if (style === "通学") {
+        condition.learnStyles.attendant = true;
+      }
+    }
+    // 対象者
+    if (key === "target") {
+      condition['target'] = query[key].toString();
+    }
+    // 地域
+    if (key === "area") {
+      condition['area'] = query[key].toString();
     }
   }
 

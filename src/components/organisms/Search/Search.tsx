@@ -59,9 +59,25 @@ const Search = ({conditions, params}: {conditions: Conditions, params: SearchPar
     selectedPeriod = `${minPeriod}_${maxPeriod}`;
   }
   const periods = <Dropdown name="period" options={conditions.periods} empty={true} selectedItem={selectedPeriod}/>;
-  const learnStyles = checkboxs(conditions.learnStyles.map(l => [l, `learn_${l}`]));
-  const targets = <Dropdown name="target" options={conditions.targets} empty={true}/>;
-  const areas = <Dropdown name="area" options={conditions.areas} empty={true}/>;
+
+  const checkedLearnStyles = [];
+  if (params.learnStyles.online) {
+    checkedLearnStyles.push("オンライン");
+  }
+  if (params.learnStyles.attendant) {
+    checkedLearnStyles.push("通学");
+  }
+  const learnStyles = checkboxs(conditions.learnStyles.map(l => [l, `learn_${l}`]), checkedLearnStyles);
+  let selectedTarget = null;
+  if (params.target) {
+    selectedTarget = params.target;
+  }
+  const targets = <Dropdown name="target" options={conditions.targets} empty={true} selectedItem={selectedTarget}/>;
+  let selectedArea = null;
+  if (params.area) {
+    selectedArea = params.area;
+  }
+  const areas = <Dropdown name="area" options={conditions.areas} empty={true} selectedItem={selectedArea}/>;
   return (
     <div className={styles.root}>
       <div className={styles.h2}>
