@@ -8,7 +8,7 @@ const Home = () => {
   const schools = getSchoolList(condition);
   return (
     <>
-      <Top schools={schools} conditions={conditions}/>
+      <Top schools={schools} conditions={conditions} searchParams={condition}/>
     </>
   );
 }

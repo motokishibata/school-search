@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Search from "../../organisms/Search";
 import SchoolList from "../../organisms/SchoolList";
 import FixedButton from "../../atoms/FixedButton";
-import { SchoolList as Schools } from "../../../repositories/schoolList";
+import { SchoolList as Schools, Condition } from "../../../repositories/schoolList";
 import { Conditions } from "../../../repositories/searchCondition";
 
 import styles from './Top.module.css';
@@ -11,9 +11,10 @@ import styles from './Top.module.css';
 type Props = {
   schools: Schools
   conditions: Conditions
+  searchParams: Condition
 };
 
-const Top = ({schools, conditions}: Props) => {
+const Top = ({schools, conditions, searchParams}: Props) => {
   let checks: { [key:string]: boolean; } = {};
   Object.keys(schools).map(key => {
     checks[`${key}`] = false;
@@ -38,7 +39,7 @@ const Top = ({schools, conditions}: Props) => {
   return (
     <>
       <section className={styles.search}>
-        <Search conditions={conditions}/>
+        <Search conditions={conditions} params={searchParams}/>
       </section>
       <section className={styles.schoolList}>
         <h2 className={styles.h2}>プログラミングスクール一覧</h2>
