@@ -25,3 +25,22 @@
   background-color: var(--diluted-main-color);
   width: 20%;
 }
+
+.linkButton {
+  text-decoration: none;
+  display: block;
+  background-color: var(--accent-color);
+  color: #f6f7f7;
+  padding: 10px;
+  border-radius: 3px;
+  text-align: center;
+  margin: 10px;
+}
+
+.thumbnail {
+  text-align: center;
+}
+
+.schoolName {
+  text-align: center;
+}

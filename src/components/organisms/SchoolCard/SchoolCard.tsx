@@ -19,7 +19,7 @@ const SchoolCard = ({schoolKey, school, handleChange}: Props) => {
     <div className={styles.root}>
       <div className={styles.flexContainer}>
         <div className={styles.checkbox}>
-          <Checkbox id={schoolKey} name={schoolKey} handleChange={handleChange}/>
+          <Checkbox id={schoolKey} name={schoolKey} handleChange={handleChange} checked={false}/>
         </div>
         <h3 className={styles.schoolName}>{school.name}</h3>
       </div>

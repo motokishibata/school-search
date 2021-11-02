@@ -61,11 +61,13 @@ const Search = ({conditions, params}: {conditions: Conditions, params: SearchPar
   const periods = <Dropdown name="period" options={conditions.periods} empty={true} selectedItem={selectedPeriod}/>;
 
   const checkedLearnStyles = [];
-  if (params.learnStyles.online) {
-    checkedLearnStyles.push("オンライン");
-  }
-  if (params.learnStyles.attendant) {
-    checkedLearnStyles.push("通学");
+  if (params.learnStyles) {
+    if (params.learnStyles.online) {
+      checkedLearnStyles.push("オンライン");
+    }
+    if (params.learnStyles.attendant) {
+      checkedLearnStyles.push("通学");
+    }
   }
   const learnStyles = checkboxs(conditions.learnStyles.map(l => [l, `learn_${l}`]), checkedLearnStyles);
   let selectedTarget = null;
