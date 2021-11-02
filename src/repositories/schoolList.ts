@@ -1,6 +1,7 @@
 import { ParsedUrlQuery } from 'querystring';
 import schoolData from './schoolList.json';
 import courceData from './cources.json';
+import { BlobOptions } from 'buffer';
 
 export function getSchool(id: string): School {
   const schools = getSchoolData();
@@ -198,6 +199,38 @@ function isMatchPeriod([lower, upper]: [number?, number?], school: School): bool
   }
 }
 
+function isMatchLearnStyle({online, attendant}: {online?:boolean, attendant?:boolean}, school: School): boolean {
+  const _styles = school.learnStyle
+  if (online != undefined && online) {
+    if (_styles.includes("オンライン")) {
+      return true;
+    }
+  }
+  if (attendant != undefined && attendant) {
+    if (_styles.includes("通学")) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function isMatchTarget(target: string, school: School): boolean {
+  const targets = school.courses.flatMap(c => c.plans.flatMap(p => {
+    if (p.target) {
+      return p.target;
+    }
+    if (p.subplans) {
+      return p.subplans.map(sp => sp.target);
+    }
+  }));
+
+  return targets.includes(target);
+}
+
+function isMatchArea(area: string, school: School): boolean {
+  return false;
+}
+
 export function getSchoolList(condition: Condition): SchoolList {
   const schools = getSchoolData();
   if (isEmpty(condition)) {
@@ -218,6 +251,21 @@ export function getSchoolList(condition: Condition): SchoolList {
     }
 
     if (condition.period && isMatchPeriod(condition.period, school)) {
+      result[key] = school;
+      continue;
+    }
+
+    if (condition.learnStyles && isMatchLearnStyle(condition.learnStyles, school)) {
+      result[key] = school;
+      continue;
+    }
+
+    if (condition.target && isMatchTarget(condition.target, school)) {
+      result[key] = school;
+      continue;
+    }
+
+    if (condition.area && isMatchArea(condition.area, school)) {
       result[key] = school;
       continue;
     }
