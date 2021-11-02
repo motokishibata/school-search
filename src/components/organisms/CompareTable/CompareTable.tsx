@@ -77,13 +77,18 @@ const Row = ({school}: { school: School}) => {
           <tr>
             {isFirst && 
               <td rowSpan={allPlan.length}>
-                <img src={school.thumbnail} width={70} height={70}/><br/>{school.name}
+                <div  className={styles.thumbnail}>
+                  <img src={school.thumbnail} width={70} height={70}/>
+                </div>
+                <p className={styles.schoolName}>{school.name}</p>
+                <a className={styles.linkButton} href={school.url.detail}>詳細</a>
+                <a className={styles.linkButton} href={school.url.official} target="_blank">公式</a>
               </td>
             }
             {pIndex === 0 &&
               <>
               <td rowSpan={planCount}>{course.name}</td>
-              <td rowSpan={planCount}>{course.skills}</td>
+              <td rowSpan={planCount}>{course.skills.join(", ")}</td>
               </>
             }
             <PlanElement plan={plan}/>

@@ -10,7 +10,6 @@ type Props = {
 };
 
 const Dropdown = ({id, name, options, empty = false, selectedItem}: Props) => {
-  console.log(selectedItem);
   return (
     <div className={styles.root}>
       <select className={styles.select} name={name} id={id}>
