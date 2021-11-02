@@ -59,11 +59,11 @@ export type Condition = {
   area?: string,
   target?: string,
   features?: string[],
-  learnStyles: {online: boolean, attendant: boolean}
+  learnStyles?: {online?: boolean, attendant?: boolean}
 };
 
 export function toCondition(query: ParsedUrlQuery): Condition {
-  const condition: Condition = {learnStyles: {online: false, attendant: false}};
+  const condition: Condition = {};
   const skills: string[] = [];
   const keys = Object.keys(query);
   for (const key of keys) {
@@ -90,9 +90,15 @@ export function toCondition(query: ParsedUrlQuery): Condition {
     if (key.startsWith("learn_")) {
       const style = key.substring(6);
       if (style === "オンライン") {
+        if (!condition.learnStyles) {
+          condition.learnStyles = {};
+        }
         condition.learnStyles.online = true;
       }
       if (style === "通学") {
+        if (!condition.learnStyles) {
+          condition.learnStyles = {};
+        }
         condition.learnStyles.attendant = true;
       }
     }
