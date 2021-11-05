@@ -178,6 +178,44 @@
       ]
     },
     {
+      "name": "Webデザインコース",
+      "skills": ["Webデザイン", "ワイヤーフレーム", "HTML/CSS", "Photoshop", "Sass", "jQuery"],
+      "plans": [
+        {"name": "4週間プラン","period": 4, "subplans": [
+            {"target": "社会人", "tuitionFee": 174900},
+            {"target": "学生", "tuitionFee": 163900}
+        ]},
+        {"name": "8週間プラン", "period": 8, "subplans": [
+            {"target": "社会人", "tuitionFee": 229900},
+            {"target": "学生", "tuitionFee": 196900}
+        ]},
+        {"name": "12週間プラン", "period": 12, "subplans": [
+          {"target": "社会人", "tuitionFee": 284900},
+          {"target": "学生", "tuitionFee": 229900}
+        ]},
+        {"name": "16週間プラン", "period": 16, "subplans": [
+          {"target": "社会人", "tuitionFee": 339900},
+          {"target": "学生", "tuitionFee": 262900}
+        ]}
+      ]
+    },
+    {
+      "name": "デザイン実践ポートフォリオコース",
+      "skills": ["Webデザイン"],
+      "plans": [
+        {"name": "4週間プラン", "period": 4, "tuitionFee": 174900},
+        {"name": "8週間プラン", "period": 8, "tuitionFee": 229900},
+        {"name": "12週間プラン", "period": 12, "tuitionFee": 284900}
+      ]
+    },
+    {
+      "name": "Webデザインフリーランスコース",
+      "skills": ["Webデザイン"],
+      "plans": [
+        {"name": "12週間プラン", "period": 12, "tuitionFee": 330000}
+      ]
+    },
+    {
       "name": "ブロックチェーンコース",
       "skills": ["ブロックチェーン"],
       "plans": [
