@@ -118,5 +118,41 @@
       "official": "https://dotpro.net/",
       "detail": "/posts/dotpro"
     }
+  },
+  "coachtech": {
+    "name": "COACHTECH",
+    "summary": "フリーランスになりたい人向け",
+    "thumbnail": "/coachtech_card.png",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "url": {
+      "official": "https://coachtech.site/",
+      "detail": "/posts/coachtech"
+    }
+  },
+  "humanacademy": {
+    "name": "ヒューマンアカデミー",
+    "summary": "豊富なコース",
+    "thumbnail": "/humanacademy_card.jpg",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "url": {
+      "official": "https://haa.athuman.com/academy/programming/",
+      "detail": "/posts/humanacademy"
+    }
+  },
+  "techis": {
+    "name": "TECH I.S.",
+    "summary": "世界展開のスクール",
+    "thumbnail": "/techis_card.jpg",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "url": {
+      "official": "https://techis.jp/",
+      "detail": "/posts/techis"
+    }
   }
 }

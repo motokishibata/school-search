@@ -328,5 +328,26 @@
       "skills": ["Python", "Keras", "Numpy", "Messaging API", "Flask", "Django", "pandas", "sckit-learn"],
       "plans": [{"period": 24, "tuitionFee": 547800}]
     }
+  ],
+  "coachtech": [
+    {
+      "name": "AI×Djangoコース",
+      "skills": ["Python", "Keras", "Numpy", "Messaging API", "Flask", "Django", "pandas", "sckit-learn"],
+      "plans": [{"period": 24, "tuitionFee": 547800}]
+    }
+  ],
+  "humanacademy": [
+    {
+      "name": "AI×Djangoコース",
+      "skills": ["Python", "Keras", "Numpy", "Messaging API", "Flask", "Django", "pandas", "sckit-learn"],
+      "plans": [{"period": 24, "tuitionFee": 547800}]
+    }
+  ],
+  "techis": [
+    {
+      "name": "AI×Djangoコース",
+      "skills": ["Python", "Keras", "Numpy", "Messaging API", "Flask", "Django", "pandas", "sckit-learn"],
+      "plans": [{"period": 24, "tuitionFee": 547800}]
+    }
   ]
 }
