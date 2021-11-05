@@ -216,6 +216,37 @@
       ]
     },
     {
+      "name": "UI/UXデザインコース",
+      "skills": ["ペルソナ設定", "デザインガイドライン", "カスタマージャーニーマップ", "Adobe XD", "画像加工"],
+      "plans": [
+        {"name": "4週間プラン", "period": 4, "tuitionFee": 174900},
+        {"name": "8週間プラン", "period": 8, "tuitionFee": 229900},
+        {"name": "12週間プラン", "period": 12, "tuitionFee": 284900}
+      ]
+    },
+    {
+      "name": "Webディレクションコース",
+      "skills": ["Web制作の基礎知識", "マネジメントスキル", "ドキュメント作成スキル", "提案スキル", "企画スキル", "設計スキル", "Prott"],
+      "plans": [
+        {"name": "4週間プラン","period": 4, "subplans": [
+          {"target": "社会人", "tuitionFee": 174900},
+          {"target": "学生", "tuitionFee": 163900}
+        ]},
+        {"name": "8週間プラン", "period": 8, "subplans": [
+            {"target": "社会人", "tuitionFee": 229900},
+            {"target": "学生", "tuitionFee": 196900}
+        ]},
+        {"name": "12週間プラン", "period": 12, "subplans": [
+          {"target": "社会人", "tuitionFee": 284900},
+          {"target": "学生", "tuitionFee": 229900}
+        ]},
+        {"name": "16週間プラン", "period": 16, "subplans": [
+          {"target": "社会人", "tuitionFee": 339900},
+          {"target": "学生", "tuitionFee": 262900}
+        ]}
+      ]
+    },
+    {
       "name": "ブロックチェーンコース",
       "skills": ["ブロックチェーン"],
       "plans": [
@@ -228,12 +259,12 @@
   "techcamp": [
     {
       "name": "プログラミング教養",
-      "skills": ["HTML/CSS", "Ruby on Rails", "JavaScript", "Git", "Python"],
+      "skills": ["HTML/CSS", "Ruby", "Ruby on Rails", "JavaScript", "SQL", "Git", "Python", "AI", "デザイン"],
       "plans": [{"admissionFee": 217800, "monthlyFee": 21780}]
     },
     {
       "name": "エンジニア転職",
-      "skills": ["HTML/CSS", "Ruby on Rails", "JavaScript", "Git", "AWS", "GitHub"],
+      "skills": ["HTML/CSS", "Ruby", "Ruby on Rails", "JavaScript", "Git", "SQL", "AWS", "GitHub", "サービス設計"],
       "plans": [
         {"name": "短期集中スタイル", "period": 10, "subplans": [
           {"name": "オンラインプラン", "tuitionFee": 657800},
@@ -287,11 +318,26 @@
   "runteq": [
     {
       "name": "Webマスターコース",
-      "skills": ["HTML/CSS", "JavaScript", "Ruby", "Ruby on Rails", "Git", "Command Line", "SQL"],
+      "skills": ["HTML/CSS", "JavaScript", "Ruby", "Ruby on Rails", "Git", "Command Line", "SQL", "Vue.js"],
       "plans": [{"period": 36, "tuitionFee": 437800}]
+    },
+    {
+      "name": "Railsマスターコース",
+      "skills": ["HTML/CSS", "JavaScript", "Ruby", "Ruby on Rails", "Git", "Command Line", "SQL", "Vue.js"],
+      "plans": [{"period": 32, "tuitionFee": 382800}]
+    },
+    {
+      "name": "Railsエンジニアコース",
+      "skills": ["HTML/CSS", "JavaScript", "Ruby", "Ruby on Rails", "Git", "Command Line", "SQL", "Vue.js"],
+      "plans": [{"period": 24, "tuitionFee": 327800}]
     }
   ],
   "geekjob": [
+    {
+      "name": "プログラミング教養コース",
+      "skills": ["HTML/CSS", "JavaScript", "Git", "GitHub", "Java", "Ruby", "Ruby on Rails", "Web API", "Apache Tomcat"],
+      "plans": [{"period": 8, "tuitionFee": 217800}]
+    },
     {
       "name": "プレミアム転職コース",
       "skills": ["HTML/CSS", "JavaScript", "Git", "GitHub", "Java", "Ruby", "Ruby on Rails", "Web API", "Apache Tomcat"],
