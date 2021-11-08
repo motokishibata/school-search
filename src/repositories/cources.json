@@ -555,7 +555,7 @@
   "samurai": [
     {
       "name": "デビューコース",
-      "skills": ["All"],
+      "skills": ["Ruby", "PHP", "Java", "Wordpress", "LPIC"],
       "plans": [
         {"name": "4週間プラン", "period": 4, "subplans": [
           {"target": "社会人", "admissionFee": 98000, "tuitionFee": 68000},
@@ -568,6 +568,82 @@
         {"name": "24週間プラン", "period": 26, "subplans": [
           {"target": "社会人", "admissionFee": 98000, "tuitionFee": 298000},
           {"target": "学生", "admissionFee": 98000, "tuitionFee": 283100}
+        ]}
+      ]
+    },
+    {
+      "name": "エキスパートコース",
+      "skills": ["オーダーメイドカリキュラム"],
+      "plans": [
+        {"name": "12週間プラン", "period": 12, "subplans": [
+          {"target": "社会人", "admissionFee": 198000, "tuitionFee": 380000},
+          {"target": "学生", "admissionFee": 198000, "tuitionFee": 361000}
+        ]},
+        {"name": "24週間プラン", "period": 24, "subplans": [
+          {"target": "社会人", "admissionFee": 198000, "tuitionFee": 663100},
+          {"target": "学生", "admissionFee": 198000, "tuitionFee": 596790}
+        ]},
+        {"name": "48週間プラン", "period": 48, "subplans": [
+          {"target": "社会人", "admissionFee": 198000, "tuitionFee": 1043100},
+          {"target": "学生", "admissionFee": 198000, "tuitionFee": 938790}
+        ]}
+      ]
+    },
+    {
+      "name": "AIコース",
+      "skills": ["Python", "R", "SQL", "機械学習", "画像解析", "データサイエンス", "ブロックチェーン"],
+      "plans": [
+        {"name": "12週間プラン", "period": 12, "subplans": [
+          {"target": "社会人", "admissionFee": 298000, "tuitionFee": 380000},
+          {"target": "学生", "admissionFee": 298000, "tuitionFee": 342000}
+        ]},
+        {"name": "24週間プラン", "period": 24, "subplans": [
+          {"target": "社会人", "admissionFee": 298000, "tuitionFee": 853100},
+          {"target": "学生", "admissionFee": 298000, "tuitionFee": 767790}
+        ]},
+        {"name": "36週間プラン", "period": 36, "subplans": [
+          {"target": "社会人", "admissionFee": 298000, "tuitionFee": 1138100},
+          {"target": "学生", "admissionFee": 298000, "tuitionFee": 1024290}
+        ]}
+      ]
+    },
+    {
+      "name": "転職保証コース",
+      "skills": ["わからん"],
+      "plans": [
+        {"name": "12週間プラン", "period": 12, "addmissionFee": 198000, "tuitionFee": 400000 },
+        {"name": "24週間プラン", "period": 24, "addmissionFee": 198000, "tuitionFee": 698000 }
+      ]
+    },
+    {
+      "name": "Webデザインコース",
+      "skills": ["HTML/CSS", "Wordpress", "Photoshop", "Adobe XD"],
+      "plans": [
+        {"name": "4週間プラン", "period": 4, "subplans": [
+          {"target": "社会人", "admissionFee": 98000, "tuitionFee": 188100},
+          {"target": "学生", "admissionFee": 98000, "tuitionFee": 178695}
+        ]},
+        {"name": "12週間プラン", "period": 12, "subplans": [
+          {"target": "社会人", "admissionFee": 98000, "tuitionFee": 188100},
+          {"target": "学生", "admissionFee": 98000, "tuitionFee": 178695}
+        ]}
+      ]
+    },
+    {
+      "name": "フリーランスコース",
+      "skills": ["HTML/CSS", "Wordpress", "Photoshop", "Adobe XD"],
+      "plans": [
+        {"name": "4週間プラン", "period": 4, "subplans": [
+          {"target": "社会人", "admissionFee": 128000, "tuitionFee": 168000 },
+          {"target": "学生", "admissionFee": 128000, "tuitionFee": 159600 }
+        ]},
+        {"name": "8週間プラン", "period": 8, "subplans": [
+          {"target": "社会人", "admissionFee": 198000, "tuitionFee": 298000 },
+          {"target": "学生", "admissionFee": 198000, "tuitionFee": 283100 }
+        ]},
+        {"name": "12週間プラン", "period": 12, "subplans": [
+          {"target": "社会人", "admissionFee": 298000, "tuitionFee": 498000 },
+          {"target": "学生", "admissionFee": 298000, "tuitionFee": 448200 }
         ]}
       ]
     }
@@ -606,6 +682,31 @@
       "name": "Javaフルコース",
       "skills": ["Java", "JUnit", "Selenide", "Jenkins", "AWS", "GitHub"],
       "plans": [{"lessons": 16, "tuitionFee": 448000}]
+    },
+    {
+      "name": "AWSフルコース",
+      "skills": ["Ruby", "Ruby on Rails", "AWS", "Git","GitHub", "MySQL"],
+      "plans": [{"lessons": 16, "tuitionFee": 448000}]
+    },
+    {
+      "name": "WordPress副業コース",
+      "skills": ["HTML/CSS", "JavaScript", "jQuery", "PHP",  "Wordpress"],
+      "plans": [{"lessons": 16, "tuitionFee": 348000}]
+    },
+    {
+      "name": "デザインコース",
+      "skills": ["Photoshop", "Illustrator", "Webデザイン"],
+      "plans": [{"lessons": 16, "tuitionFee": 348000}]
+    },
+    {
+      "name": "Lステップマーケティングコース",
+      "skills": ["Lステップマーケティング"],
+      "plans": [{"lessons": 16, "tuitionFee": 448000}]
+    },
+    {
+      "name": "Reactコース",
+      "skills": ["JavaScript", "React.js", "TypeScript", "Next.js", "Jest", "Storybook"],
+      "plans": [{"lessons": 16, "tuitionFee": 448000}]
     }
   ],
   "potepancamp": [
@@ -630,27 +731,53 @@
       "name": "AI×Djangoコース",
       "skills": ["Python", "Keras", "Numpy", "Messaging API", "Flask", "Django", "pandas", "sckit-learn"],
       "plans": [{"period": 24, "tuitionFee": 547800}]
+    },
+    {
+      "name": "WebExpertコース",
+      "skills": ["HTML/CSS", "JavaScript", "Sass", "Wordpress", "Git", "GitHub", "PHP"],
+      "plans": [
+        {"period": 20, "tuitionFee": 439780},
+        {"period": 24, "tuitionFee": 547800}
+      ]
     }
   ],
   "coachtech": [
     {
-      "name": "AI×Djangoコース",
-      "skills": ["Python", "Keras", "Numpy", "Messaging API", "Flask", "Django", "pandas", "sckit-learn"],
-      "plans": [{"period": 24, "tuitionFee": 547800}]
+      "name": "フリーランスコース",
+      "skills": ["Webアプリ"],
+      "plans": [
+        {"name": "5ヶ月プラン", "period": 20, "tuitionFee": 440000},
+        {"name": "7ヶ月プラン", "period": 24, "tuitionFee": 550000}
+      ]
     }
   ],
   "humanacademy": [
     {
-      "name": "AI×Djangoコース",
-      "skills": ["Python", "Keras", "Numpy", "Messaging API", "Flask", "Django", "pandas", "sckit-learn"],
-      "plans": [{"period": 24, "tuitionFee": 547800}]
+      "name": "プログラマー総合コース",
+      "skills": ["HTML/CSS", "Python", "Django", "SQL", "Git"],
+      "plans": [{"period": 48, "addmissionFee": 11000,"tuitionFee": 656810}]
+    },
+    {
+      "name": "iPhone開発講座",
+      "skills": ["Xcode", "Swift"],
+      "plans": [{"period": 24, "addmissionFee": 11000,"tuitionFee": 166320}]
     }
   ],
   "techis": [
     {
-      "name": "AI×Djangoコース",
-      "skills": ["Python", "Keras", "Numpy", "Messaging API", "Flask", "Django", "pandas", "sckit-learn"],
-      "plans": [{"period": 24, "tuitionFee": 547800}]
+      "name": "長期PROスキルコース",
+      "skills": ["HTML/CSS", "JavaScript", "PHP", "SQL"],
+      "plans": [{"period": 48, "tuitionFee": 686400}]
+    },
+    {
+      "name": "短期スキルコース",
+      "skills": ["HTML/CSS", "JavaScript", "PHP", "SQL"],
+      "plans": [{"period": 12, "tuitionFee": 686400}]
+    },
+    {
+      "name": "データサイエンティストコース",
+      "skills": ["HTML/CSS", "SQL", "Python", "Pandas", "Numpy","統計", "機械学習"],
+      "plans": [{"period": 48, "tuitionFee": 987800}]
     }
   ]
 }
