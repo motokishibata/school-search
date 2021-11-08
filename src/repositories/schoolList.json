@@ -6,12 +6,6 @@
     "learnStyle": [
       "オンライン"
     ],
-    "skills": [
-      "HTML/CSS",
-      "Ruby",
-      "Ruby on Rails",
-      "Python"
-    ],
     "url": {
       "official": "https://techacademy.jp/",
       "detail": "/posts/techacademy"
@@ -24,12 +18,6 @@
     "learnStyle": [
       "オンライン"
     ],
-    "skills": [
-      "HTML/CSS",
-      "Ruby",
-      "Ruby on Rails",
-      "Python"
-    ],
     "url": {
       "official": "https://tech-camp.in/",
       "detail": "/posts/techcamp"
@@ -38,15 +26,9 @@
   "samurai": {
     "name": "SAMURAIエンジニア塾",
     "summary": "オーダーメイドのカリキュラム",
-    "thumbnail": "/150x150.png",
+    "thumbnail": "/samurai_card.jpg",
     "learnStyle": [
       "オンライン"
-    ],
-    "skills": [
-      "HTML/CSS",
-      "Ruby",
-      "Ruby on Rails",
-      "Python"
     ],
     "url": {
       "official": "https://www.sejuku.net/",
@@ -56,15 +38,9 @@
   "dmmwebcamp": {
     "name": "DMM WEBCAMP",
     "summary": "給付金支給",
-    "thumbnail": "/150x150.png",
+    "thumbnail": "/dmmwebcamp_card.png",
     "learnStyle": [
       "オンライン"
-    ],
-    "skills": [
-      "HTML/CSS",
-      "Ruby",
-      "Ruby on Rails",
-      "Python"
     ],
     "url": {
       "official": "https://web-camp.io/",
@@ -74,14 +50,9 @@
   "runteq": {
     "name": "RUNTEQ（ランテック）",
     "summary": "スタートアップ特化",
-    "thumbnail": "/150x150.png",
+    "thumbnail": "/runteq_card.jpg",
     "learnStyle": [
       "オンライン"
-    ],
-    "skills": [
-      "HTML/CSS",
-      "Ruby",
-      "Ruby on Rails"
     ],
     "url": {
       "official": "https://runteq.jp/",
@@ -91,14 +62,9 @@
   "geekjob": {
     "name": "GEEK JOB",
     "summary": "無料コースあり",
-    "thumbnail": "/150x150.png",
+    "thumbnail": "/geekjob_card.png",
     "learnStyle": [
       "オンライン"
-    ],
-    "skills": [
-      "HTML/CSS",
-      "Ruby",
-      "Ruby on Rails"
     ],
     "url": {
       "official": "https://learn.geekjob.jp/",
@@ -108,14 +74,9 @@
   "raisetech": {
     "name": "RaiseTech",
     "summary": "無料コースあり",
-    "thumbnail": "/150x150.png",
+    "thumbnail": "/raisetech_card.png",
     "learnStyle": [
       "オンライン"
-    ],
-    "skills": [
-      "HTML/CSS",
-      "Ruby",
-      "Ruby on Rails"
     ],
     "url": {
       "official": "https://raise-tech.net/",
@@ -125,14 +86,9 @@
   "potepancamp": {
     "name": "ポテパンキャンプ",
     "summary": "無料コースあり",
-    "thumbnail": "/150x150.png",
+    "thumbnail": "/potepancamp_card.png",
     "learnStyle": [
       "オンライン"
-    ],
-    "skills": [
-      "HTML/CSS",
-      "Ruby",
-      "Ruby on Rails"
     ],
     "url": {
       "official": "https://camp.potepan.com/",
@@ -142,14 +98,9 @@
   "chaty": {
     "name": "CHATY",
     "summary": "無料コースあり",
-    "thumbnail": "/150x150.png",
+    "thumbnail": "/chaty_card.png",
     "learnStyle": [
       "オンライン"
-    ],
-    "skills": [
-      "HTML/CSS",
-      "Ruby",
-      "Ruby on Rails"
     ],
     "url": {
       "official": "https://chaty.jp/",
@@ -159,18 +110,49 @@
   "dotpro": {
     "name": ".Pro",
     "summary": "無料コースあり",
-    "thumbnail": "/150x150.png",
+    "thumbnail": "/dotpro_card.png",
     "learnStyle": [
       "オンライン"
-    ],
-    "skills": [
-      "HTML/CSS",
-      "Ruby",
-      "Ruby on Rails"
     ],
     "url": {
       "official": "https://dotpro.net/",
       "detail": "/posts/dotpro"
+    }
+  },
+  "coachtech": {
+    "name": "COACHTECH",
+    "summary": "フリーランスになりたい人向け",
+    "thumbnail": "/coachtech_card.png",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "url": {
+      "official": "https://coachtech.site/",
+      "detail": "/posts/coachtech"
+    }
+  },
+  "humanacademy": {
+    "name": "ヒューマンアカデミー",
+    "summary": "豊富なコース",
+    "thumbnail": "/humanacademy_card.jpg",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "url": {
+      "official": "https://haa.athuman.com/academy/programming/",
+      "detail": "/posts/humanacademy"
+    }
+  },
+  "techis": {
+    "name": "TECH I.S.",
+    "summary": "世界展開のスクール",
+    "thumbnail": "/techis_card.jpg",
+    "learnStyle": [
+      "オンライン"
+    ],
+    "url": {
+      "official": "https://techis.jp/",
+      "detail": "/posts/techis"
     }
   }
 }
