@@ -2,6 +2,7 @@ import { ChangeEventHandler } from 'react';
 import { School } from '../../../repositories/schoolList';
 import BorderLabel from '../../atoms/BorderLabel';
 import Checkbox from '../../atoms/Checkbox';
+import SchoolCardHeader from '../SchoolCardHeader';
 import styles from './SchoolCard.module.css';
 
 type Props = {
@@ -10,18 +11,28 @@ type Props = {
   handleChange: ChangeEventHandler<HTMLInputElement>
 };
 
+const SKILL_MAXCOUNT = 15;
 const SchoolCard = ({schoolKey, school, handleChange}: Props) => {
-  const skills = school.courses.flatMap(c => c.skills);
+  const allSkills = school.courses.flatMap(c => c.skills);
+  let skills = allSkills.filter((x, i, self) => {
+    return self.indexOf(x) === i;
+  });
+
+  if (skills.length > SKILL_MAXCOUNT) {
+    skills = skills.slice(0, SKILL_MAXCOUNT);
+  }
+
   const labels = skills.map(skill => {
     return <BorderLabel text={skill} addCss={styles.skill} />;
   });
   return (
     <div className={styles.root}>
       <div className={styles.flexContainer}>
-        <div className={styles.checkbox}>
-          <Checkbox id={schoolKey} name={schoolKey} handleChange={handleChange} checked={false}/>
-        </div>
-        <h3 className={styles.schoolName}>{school.name}</h3>
+        <SchoolCardHeader id={schoolKey}
+          title={school.name}
+          handleChange={handleChange}
+          checked={false}
+        />
       </div>
       <div className={styles.cardContainer}>
         <div className={styles.thumbnail}>
@@ -33,6 +44,9 @@ const SchoolCard = ({schoolKey, school, handleChange}: Props) => {
             isOffline={school.learnStyle.includes("通学")}
           />
           {labels}
+          {allSkills.length > 10 &&
+            <label className={styles.moreLabel}>...</label>
+          }
           <p>{school.summary}</p>
           <HorizontalButtons detail={school.url.detail} official={school.url.official} />
         </div>

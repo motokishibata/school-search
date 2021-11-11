@@ -19,6 +19,12 @@
   display: flex;
 }
 
+.moreLabel {
+  color: var(--main-color);
+  vertical-align: bottom;
+  font-size: 1.5rem;
+}
+
 @media screen and (max-width: 480px){
   .cardContainer {
     text-align: center;
