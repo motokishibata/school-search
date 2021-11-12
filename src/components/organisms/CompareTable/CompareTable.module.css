@@ -11,6 +11,12 @@
   text-align: center;
 }
 
+.tableWrapper {
+  display: block;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 .table {
   border-collapse: collapse;
   margin: 0 auto;
@@ -23,7 +29,10 @@
 
 .table th {
   background-color: var(--diluted-main-color);
-  width: 20%;
+}
+
+.table tr td:nth-child(4) {
+  white-space: nowrap;
 }
 
 .linkButton {
