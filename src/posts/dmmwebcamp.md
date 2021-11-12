@@ -142,5 +142,3 @@ SKILLSでプログラミングスキルを学びたい場合は説明会動画�
 [＞＞DMM WEB CAMP SKILLSの説明会動画を見てみる](https://t.felmat.net/fmcl?ak=J16536.1.W354495.I756445)
 
 おすすめのプログラミングスクールをまとめた記事もあるので、他のスクールが気になる方はぜひ参考にしてください。
-
-[st-card myclass="st-no-shadow" id="1117" label="おすすめ" pc_height="" name="" bgcolor="#cccccc" color="#ffffff" fontawesome="fa-file-text-o" readmore="on" thumbnail="on" type="text"]

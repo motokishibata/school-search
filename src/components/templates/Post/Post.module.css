@@ -3,10 +3,41 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .root h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  background-color: #f3f3f3;
+  border-left: 10px solid var(--main-color);
+  padding: 10px 0 10px 7px;
+}
+
+.root h3 {
+  font-size: 1.2rem;
   border-bottom: 2px solid var(--main-color);
+}
+
+.root ul {
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.root table {
+  border-collapse: collapse;
+}
+
+.root th, .root td {
+  border: 1px solid #9a9a9a;
+  padding: 3px 8px 3px 8px;
+}
+
+.root th {
+  background-color: #a5dfd7;
+}
+
+.root img {
+  width: 100%;
 }
