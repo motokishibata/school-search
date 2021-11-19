@@ -9,7 +9,7 @@ const Post = ({ postData }) => {
       </Head>
       <article className={styles.root}>
         <h1 className={styles.title}>{postData.title}</h1>
-        <img src={postData.eyecatch} />
+        {postData.eyecatch && <img src={postData.eyecatch} />}
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </>
