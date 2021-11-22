@@ -23,11 +23,8 @@ export async function getPostData(id: string) {
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
-  const school = getSchool(id);
-
   return {
     id,
-    school,
     contentHtml,
     ...matterResult.data
   };

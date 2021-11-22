@@ -1,5 +1,6 @@
 ---
 title: "TechAcademy（テックアカデミー）まとめ"
+eyecatch: "/techacademy_card.png"
 ---
 * TechAcademy（テックアカデミー）の評判を知りたい
 * TechAcademy（テックアカデミー）を体験した人の本音を知りたい  
