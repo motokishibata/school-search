@@ -1,7 +1,7 @@
 {
   "techacademy": {
     "name": "TechAcademy",
-    "summary": "オンライン完結のスクールとして実績が豊富。",
+    "summary": "オンライン完結のスクール。\n豊富なコース、現役エンジニアのマンツーマンレッスンが魅力。",
     "thumbnail": "/techacademy_card.png",
     "learnStyle": [
       "オンライン"
@@ -13,7 +13,7 @@
   },
   "techcamp": {
     "name": "テックキャンプ",
-    "summary": "オンライン完結のスクールとして実績が豊富。",
+    "summary": "未経験から最短10週間でエンジニアに転職できる。\n600時間の濃密カリキュラムはRubyの生みの親が監修！",
     "thumbnail": "/techcamp_card.png",
     "learnStyle": [
       "オンライン"
@@ -25,7 +25,7 @@
   },
   "samurai": {
     "name": "SAMURAIエンジニア塾",
-    "summary": "オーダーメイドのカリキュラム",
+    "summary": "完全オリジナルサービスをインストラクターの補助付きで開発\nより実践的なスキルが身につきます。",
     "thumbnail": "/samurai_card.jpg",
     "learnStyle": [
       "オンライン"
@@ -37,7 +37,7 @@
   },
   "dmmwebcamp": {
     "name": "DMM WEBCAMP",
-    "summary": "給付金支給",
+    "summary": "DMM.comが運営するスクール。\nキャリアに合わせて選べるコースが魅力です。",
     "thumbnail": "/dmmwebcamp_card.png",
     "learnStyle": [
       "オンライン"
@@ -49,7 +49,7 @@
   },
   "runteq": {
     "name": "RUNTEQ（ランテック）",
-    "summary": "スタートアップ特化",
+    "summary": "開発現場で求められるスキルを習得できる。\nスタートアップへの就職を目指すならココ",
     "thumbnail": "/runteq_card.jpg",
     "learnStyle": [
       "オンライン"
@@ -61,7 +61,7 @@
   },
   "geekjob": {
     "name": "GEEK JOB",
-    "summary": "無料コースあり",
+    "summary": "無料コースあり。とにかくスピード転職したいならおすすめのスクール。",
     "thumbnail": "/geekjob_card.png",
     "learnStyle": [
       "オンライン"
@@ -73,7 +73,7 @@
   },
   "raisetech": {
     "name": "RaiseTech",
-    "summary": "無料コースあり",
+    "summary": "稼げるエンジニアを目標とするスクール。\n講師陣は月単価80万以上の現役エンジニア。",
     "thumbnail": "/raisetech_card.png",
     "learnStyle": [
       "オンライン"
@@ -85,7 +85,7 @@
   },
   "potepancamp": {
     "name": "ポテパンキャンプ",
-    "summary": "無料コースあり",
+    "summary": "企業のヒアリングを元に作成した実践的なカリキュラム。\nレビューもあリ、現場さながらの体験ができます。",
     "thumbnail": "/potepancamp_card.png",
     "learnStyle": [
       "オンライン"
@@ -97,7 +97,7 @@
   },
   "chaty": {
     "name": "CHATY",
-    "summary": "無料コースあり",
+    "summary": "モダンなスキルが学べるスクール。\nクロスプラットフォームのスマホアプリ開発が学べる。",
     "thumbnail": "/chaty_card.png",
     "learnStyle": [
       "オンライン"
@@ -109,7 +109,7 @@
   },
   "dotpro": {
     "name": ".Pro",
-    "summary": "無料コースあり",
+    "summary": "スクールでは珍しい少人数制。実践重視のカリキュラムで即戦力を目指せる。",
     "thumbnail": "/dotpro_card.png",
     "learnStyle": [
       "オンライン"
@@ -121,7 +121,7 @@
   },
   "coachtech": {
     "name": "COACHTECH",
-    "summary": "フリーランスになりたい人向け",
+    "summary": "フリーランスを目指すコースあり。\nポートフォリオ作成支援から案件獲得のサポートまで。",
     "thumbnail": "/coachtech_card.png",
     "learnStyle": [
       "オンライン"
@@ -133,7 +133,7 @@
   },
   "humanacademy": {
     "name": "ヒューマンアカデミー",
-    "summary": "豊富なコース",
+    "summary": "プログラミング以外でもオンラインスクールを多数展開。\n豊富なコースから学びたい内容を選べる。",
     "thumbnail": "/humanacademy_card.jpg",
     "learnStyle": [
       "オンライン"
@@ -145,7 +145,7 @@
   },
   "techis": {
     "name": "TECH I.S.",
-    "summary": "世界展開のスクール",
+    "summary": "日本・アメリカ・インドとグローバル展開しているスクール。\nシリコンバレー、日本のトップエンジニアが監修したカリキュラム。",
     "thumbnail": "/techis_card.jpg",
     "learnStyle": [
       "オンライン"

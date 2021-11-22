@@ -1,4 +1,4 @@
-import { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler } from 'react';
 import { School } from '../../../repositories/schoolList';
 import BorderLabel from '../../atoms/BorderLabel';
 import Checkbox from '../../atoms/Checkbox';
@@ -47,7 +47,7 @@ const SchoolCard = ({schoolKey, school, handleChange}: Props) => {
           {allSkills.length > 10 &&
             <label className={styles.moreLabel}>...</label>
           }
-          <p>{school.summary}</p>
+          <p>{wordBreak(school.summary)}</p>
           <HorizontalButtons detail={school.url.detail} official={school.url.official} />
         </div>
       </div>
@@ -81,6 +81,17 @@ const HorizontalButtons = (url : HorizontalButtonsProps) => {
         <a className={styles.linkButton} href={url.official} target="_blank">公式</a>
     </div>
   );
+}
+
+function wordBreak(word: string): JSX.Element {
+  const texts = word.split(/(\n)/).map((item, index) => {
+    return (
+      <React.Fragment key={index}>
+        { item.match(/\n/) ? <br /> : item }
+      </React.Fragment>
+    );
+  });
+  return <>{texts}</>;
 }
 
 export default SchoolCard;
