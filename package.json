@@ -1,14 +1,12 @@
 {
   "private": true,
-  "main": "firebaseFunctions.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "serve": "npm run build && firebase emulators:start --only functions,hosting",
-    "shell": "npm run build && firebase functions:shell",
-    "deploy": "firebase deploy --only functions,hosting",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "export": "next build && next export",
+    "deploy": "yarn export && firebase deploy --only hosting"
   },
   "dependencies": {
     "firebase-admin": "^9.4.2",
